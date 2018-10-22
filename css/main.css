@@ -1,0 +1,268 @@
+/* Cross-browser CSS */
+html, body {
+    padding : 0;
+    margin : 0;
+    background : #eceff1;
+    color : #000000;
+}
+
+
+/* Hide overflow content */
+main, footer {
+    overflow: hidden;
+}
+
+body > header {
+    width: 300px;
+    position: fixed;
+    height: 100vh;
+    padding: 0 !important;
+    z-index: 3;
+    transition: width 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    background-color: #fff;
+    overflow: hidden;
+}
+body > header > p {
+    transition: color 0.25s linear;
+    font-size: 2rem;
+    cursor: pointer;
+    width: 300px;
+}
+body > header > p:hover {
+    color: #039be5;
+}
+body > header > p > i {
+    transition: transform 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    text-align: center;
+    width: 75px;
+    height: auto;
+}
+body > header > nav {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff !important;
+    box-shadow: none;
+    height: auto;
+}
+body > header > nav > a {
+    transition: color 0.25s linear;
+    color: #000;
+    opacity: 0;
+    width: 300px;
+    line-height: 48px;
+}
+body > header > nav > a.active,
+body > header > nav > a:hover {
+    color: #039be5;
+}
+body > header > nav > a > i {
+    text-align: center;
+    width: 75px;
+    height: auto;
+}
+
+/* Main page */
+main {
+    margin-bottom: 450px !important;
+    position: absolute;
+    transition: margin-left 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    width: auto;
+    min-height: 100vh !important;
+    right: 0 !important;
+    z-index: 2;
+}
+
+/* All articles */
+main > article {
+    padding: 50px 5% 50px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+main > article > header {
+    margin: 50px auto;
+}
+
+/*  */
+#apresentation > section > p, #graduation > header, #graduation > ul > li {
+    opacity: 0;
+}
+
+/* First article - apresentation */
+#apresentation > header > h1 {
+    font-size: auto;
+    width: 100%;
+}
+#apresentation > section:first-of-type {
+    opacity: 0;
+    -o-animation-delay: 0.5s;
+    -moz-animation-delay: 0.5s;
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+    display: flex;
+    justify-content: center;
+}
+#staapresentationrt > section > p {
+    margin: 16px 0;
+}
+
+/* Second article - graduations */
+#graduation > ul {
+    border: none;
+}
+#graduation > ul > li {
+    transition: color 0.25s linear;
+    z-index: 0;
+    margin: 15px;
+}
+#graduation > ul > li:hover {
+    color: #039be5;
+    -webkit-box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Third article - stacks */
+#stack > ul > li > header.collapsible-header {
+    justify-content: space-between;
+    transition: color 0.25s linear;
+}
+#stack > ul > li > section.collapsible-body {
+    background-color: #fff;
+}
+#stack > ul > li.active > header.collapsible-header,
+#stack > ul > li:hover > header.collapsible-header {
+    color: #039be5;
+}
+#stack > ul > li:first-child .fa-plus {
+    transform: rotate(135deg);
+}
+#stack .fas:not(.fa-plus),
+#stack .fab:not(.fa-css3-alt):not(.fa-html5) {
+    margin: 0 1.5rem 0 0.5rem;
+}
+#stack .fa-html5 {
+    margin: 0;
+    transform: rotate(-15deg);
+}
+#stack .fa-css3-alt {
+    margin: 0;
+    transform: translateX(-15px) rotate(15deg);
+}
+#stack li:last-child i {
+    display: block;
+}
+#stack li:last-child i > img {
+    position: absolute;
+    transition: opacity 0.25s linear;
+}
+#stack li:last-child i > img:last-child {
+    opacity: 0;
+}
+#stack li:last-child:hover i > img:first-child,
+#stack li.active:last-child i > img:first-child {
+    opacity: 0;
+}
+#stack li:last-child:hover i > img:last-child,
+#stack li.active:last-child i > img:last-child {
+    opacity: 1;
+}
+#stack li:last-child span > span {
+    margin-left: 60px;
+}
+
+/* Fourth article - experiences */
+#experience > section > ul {
+    border: none;
+}
+#experience > section > ul > li {
+    transition: color 0.25s linear;
+    background-color: transparent;
+}
+#experience > section > ul > li:hover {
+    color: #039be5;
+}
+
+/* article - projects */
+#project > section > div {
+    padding: 16px 32px 16px;
+}
+#project > section figure > .card-image {
+    overflow: visible;
+}
+#project > section figure > .card-image > img {
+    width: 100%;
+}
+#project > section figure > .card-image > i {
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+}
+#project > section figure > figcaption > .card-action {
+    position: absolute;
+    bottom: 8px;
+    color: #039be5;
+}
+
+/* Finish (footer) - contact */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    padding-bottom: 50px;
+    padding-top: 350px !important;
+    padding-left: 300px;
+    transition: padding-left 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    z-index: 1;
+}
+footer > p.footer-copyright {
+    text-align: center;
+    display: block !important;
+    margin-top: 16px;
+}
+footer > ul {
+    border: none !important;
+}
+footer > ul:first-child {
+    padding-left: 15px;
+}
+footer > ul > li {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 8px 0 !important;
+}
+footer > ul > li > a {
+    font-size: 16px;
+    transition: color 0.25s linear;
+}
+footer > ul > li > a:hover {
+    color: #ffffff
+}
+footer > ul > li > a > i {
+    text-align: center;
+    width: 32px;
+}
+
+/* Responsive navigation */
+@media (max-width: 450px) {
+    main {
+        margin-left: 0px !important;
+    }
+    footer {
+        padding-left: 0px !important;
+    }
+}
+@media (min-width: 451px) {
+    main {
+        margin-left: 300px;
+    }
+    footer {
+        padding-left: 300px;
+    }
+}
+@media (max-width: 450px) {
+    body > header {
+        width: 300px !important;
+    }
+}
