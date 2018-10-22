@@ -145,7 +145,6 @@ let typed = new Typed('#apresentation h1', {
                 });
 
                 for (const element of document.querySelectorAll(`
-                    #apresentation > header,
                     #apresentation > section > p,
                     #graduation > header,
                     #graduation > ul > li,
@@ -162,6 +161,11 @@ let typed = new Typed('#apresentation h1', {
                     element.onElementIn(elementIn);
                     element.onElementOut(elementOut);
                 }
+
+                const titleName = document.querySelector('#apresentation > header');
+                titleName.setAttribute('fade', 'inTop');
+                titleName.onElementIn(elementIn);
+                titleName.onElementOut(elementOut);
 
                 onElement.execute();
             }
