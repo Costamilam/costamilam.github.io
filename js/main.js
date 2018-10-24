@@ -70,6 +70,45 @@ const elementOut = function(element) {
     }
 };
 
+const theme = [
+    {
+        '--background-primary': '#fff',
+        '--background-secondary': '#000',
+        '--background-tertiary': '#fff',
+        '--color-primary': '#000',
+        '--color-secondary': '#000',
+        '--color-tertiary': '#fff'
+    }, {
+        '--background-primary': '#eceff1',
+        '--background-secondary': '#3f51b5',
+        '--background-tertiary': '#fff',
+        '--color-primary': '#000',
+        '--color-secondary': '#039be5',
+        '--color-tertiary': '#fff'
+    }, {
+        '--background-primary': '#000',
+        '--background-secondary': '#263238',
+        '--background-tertiary': '#000',
+        '--color-primary': '#fff',
+        '--color-secondary': '#3f51b5',
+        '--color-tertiary': '#fff'
+    }, {
+        '--background-primary': '#eceff1',
+        '--background-secondary': '#b71c1c',
+        '--background-tertiary': '#fff',
+        '--color-primary': '#000',
+        '--color-secondary': '#e53935',
+        '--color-tertiary': '#fff'
+    }, {
+        '--background-primary': '#000',
+        '--background-secondary': '#e53935',
+        '--background-tertiary': '#000',
+        '--color-primary': '#fff',
+        '--color-secondary': '#b71c1c',
+        '--color-tertiary': '#fff'
+    }
+];
+
 //Scrollspy menu
 let scrollspy;
 document.on('DOMContentLoaded', function() {
@@ -94,6 +133,15 @@ document.on('DOMContentLoaded', function() {
 
         header.firstElementChild.firstElementChild.style.transform = header.firstElementChild.firstElementChild.style.transform !== 'rotate(180deg)' ? 'rotate(180deg)' : null;
     });
+
+    themeButton = document.querySelectorAll('#dropdownTheme > li');
+    for (let i = 0; i < themeButton.length; i++) {
+        themeButton[i].on('click', function() {
+            for (const variable in theme[i]) {
+                document.body.style.setProperty(variable, theme[i][variable]);
+            }
+        });
+    }
 });
 
 //Typed start article title

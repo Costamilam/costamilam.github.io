@@ -1,8 +1,11 @@
-html {
+/* Colors */
+body {
     --background-primary: #eceff1;
     --background-secondary: #263238;
+    --background-tertiary: #fff;
     --color-primary: #000;
     --color-secondary: #039be5;
+    --color-tertiary: #fff;
 }
 
 /* Cross-browser CSS */
@@ -13,11 +16,6 @@ html, body {
     color : var(--color-primary);
 }
 
-/* Hide overflow content */
-main, footer {
-    overflow: hidden;
-}
-
 body > header {
     width: 300px;
     position: fixed;
@@ -25,7 +23,7 @@ body > header {
     padding: 0 !important;
     z-index: 3;
     transition: width 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-    background-color: #fff;
+    background-color: var(--background-tertiary);
     overflow: hidden;
 }
 body > header > p {
@@ -35,7 +33,7 @@ body > header > p {
     width: 300px;
 }
 body > header > p:hover {
-    color: #039be5;
+    color: var(--color-secondary);
 }
 body > header > p > i {
     transition: transform 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
@@ -46,14 +44,15 @@ body > header > p > i {
 body > header > nav {
     display: flex;
     flex-direction: column;
-    background-color: #fff !important;
+    background-color: var(--background-tertiary) !important;
     box-shadow: none;
     height: auto;
 }
 body > header > nav > a,
 body > header > nav > button {
     transition: color 0.25s linear;
-    color: #000;width: 300px;
+    color: var(--color-primary);
+    width: 300px;
     line-height: 48px;
 }
 body > header > nav > a {
@@ -74,7 +73,7 @@ body > header > nav > a.active,
 body > header > nav > a:hover,
 body > header > nav > button.active,
 body > header > nav > button:hover {
-    color: #039be5;
+    color: var(--color-secondary);
 }
 body > header > nav > a > i,
 body > header > nav > button > i {
@@ -104,7 +103,7 @@ body > header > nav > ul#dropdownTheme > li:nth-child(3) > i {
     background: linear-gradient(to left, #000 0%, #000 33%, #263238 33%, #263238 67%, #039be5 67%, #039be5 100%);
 }
 body > header > nav > ul#dropdownTheme > li:nth-child(4) > i {
-    background: linear-gradient(to left, #b71c1c 0%, #b71c1c42 33%, #e53935 33%, #e53935 67%, #fff 67%, #fff 100%);
+    background: linear-gradient(to left, #b71c1c 0%, #b71c1c 33%, #e53935 33%, #e53935 67%, #fff 67%, #fff 100%);
 }
 body > header > nav > ul#dropdownTheme > li:nth-child(5) > i {
     background: linear-gradient(to left, #000 0%, #000 33%, #b71c1c 33%, #b71c1c 67%, #e53935 67%, #e53935 100%);
@@ -165,7 +164,7 @@ main > article > header {
     margin: 15px;
 }
 #graduation > ul > li:hover {
-    color: #039be5;
+    color: var(--color-secondary);
     -webkit-box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
     box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
     z-index: 1;
@@ -177,11 +176,11 @@ main > article > header {
     transition: color 0.25s linear;
 }
 #stack > ul > li > section.collapsible-body {
-    background-color: #fff;
+    background-color: var(--background-tertiary);
 }
 #stack > ul > li.active > header.collapsible-header,
 #stack > ul > li:hover > header.collapsible-header {
-    color: #039be5;
+    color: var(--color-secondary);
 }
 #stack > ul > li:first-child .fa-plus {
     transform: rotate(135deg);
@@ -229,7 +228,7 @@ main > article > header {
     background-color: transparent;
 }
 #experience > section > ul > li:hover {
-    color: #039be5;
+    color: var(--color-secondary);
 }
 
 /* article - projects */
@@ -246,21 +245,29 @@ main > article > header {
     cursor: pointer;
     text-align: center;
     font-size: 16px;
+    background-color: var(--color-secondary);
+}
+#project > section figure > figcaption > p > a {
+    color: var(--color-secondary);
 }
 #project > section figure > figcaption > .card-action {
     position: absolute;
     bottom: 8px;
-    color: #039be5;
+}
+#project > section figure > figcaption > .card-action > a {
+    color: var(--color-secondary);
 }
 
 /* Finish (footer) - contact */
 footer {
+    background-color: var(--background-secondary) !important;
     position: fixed;
     bottom: 0;
     width: 100%;
     height: auto;
+    margin-bottom: 0 !important;
     padding-bottom: 50px;
-    padding-top: 350px !important;
+    padding-top: 500px !important;
     padding-left: 300px;
     transition: padding-left 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
     z-index: 1;
@@ -286,7 +293,7 @@ footer > ul > li > a {
     transition: color 0.25s linear;
 }
 footer > ul > li > a:hover {
-    color: #ffffff
+    color: var(--color-tertiary);
 }
 footer > ul > li > a > i {
     text-align: center;
