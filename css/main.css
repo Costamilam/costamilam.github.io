@@ -1,11 +1,17 @@
+html {
+    --background-primary: #eceff1;
+    --background-secondary: #263238;
+    --color-primary: #000;
+    --color-secondary: #039be5;
+}
+
 /* Cross-browser CSS */
 html, body {
     padding : 0;
     margin : 0;
-    background : #eceff1;
-    color : #000000;
+    background : var(--background-primary);
+    color : var(--color-primary);
 }
-
 
 /* Hide overflow content */
 main, footer {
@@ -75,6 +81,33 @@ body > header > nav > button > i {
     text-align: center;
     width: 75px;
     height: auto;
+}
+body > header > nav > ul#dropdownTheme > li {
+    line-height: 50px;
+    display: flex;
+}
+body > header > nav > ul#dropdownTheme > li > i {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 11.5px 8px;
+    border: 1px solid black;
+    transform: rotate(45deg);
+}
+body > header > nav > ul#dropdownTheme > li:nth-child(1) > i {
+    background: linear-gradient(to left, #000 0%, #000 50%, #fff 50%, #fff 100%);
+}
+body > header > nav > ul#dropdownTheme > li:nth-child(2) > i {
+    background: linear-gradient(to left, #263238 0%, #263238 33%, #039be5 33%, #039be5 67%, #fff 67%, #fff 100%);
+}
+body > header > nav > ul#dropdownTheme > li:nth-child(3) > i {
+    background: linear-gradient(to left, #000 0%, #000 33%, #263238 33%, #263238 67%, #039be5 67%, #039be5 100%);
+}
+body > header > nav > ul#dropdownTheme > li:nth-child(4) > i {
+    background: linear-gradient(to left, #b71c1c 0%, #b71c1c42 33%, #e53935 33%, #e53935 67%, #fff 67%, #fff 100%);
+}
+body > header > nav > ul#dropdownTheme > li:nth-child(5) > i {
+    background: linear-gradient(to left, #000 0%, #000 33%, #b71c1c 33%, #b71c1c 67%, #e53935 67%, #e53935 100%);
 }
 
 /* Main page */

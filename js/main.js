@@ -75,6 +75,8 @@ let scrollspy;
 document.on('DOMContentLoaded', function() {
     scrollspy = M.ScrollSpy.init(document.querySelectorAll('.scrollspy'), {})
 
+    M.Dropdown.init(document.querySelector('.dropdown-trigger'), {});
+
     document.querySelector('body > header > p').addEventListener('click', function() {
         if (isMobile) {
             sidenavInstance.close();
