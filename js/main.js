@@ -74,10 +74,10 @@ const theme = [
     {
         '--background-primary': '#fff',
         '--background-secondary': '#000',
-        '--background-tertiary': '#fff',
+        '--background-card': '#fff',
         '--color-primary': '#000',
-        '--color-secondary': '#000',
-        '--color-tertiary': '#fff'
+        '--color-secondary': '#fff',
+        '--color-hover': 'none'
     }, {
         '--background-primary': '#eceff1',
         '--background-secondary': '#3f51b5',

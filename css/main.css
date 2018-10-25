@@ -1,19 +1,17 @@
 /* Colors */
 body {
-    --background-primary: #eceff1;
+    --background-primary: #fafafa;
     --background-secondary: #263238;
-    --background-tertiary: #fff;
+    --background-card: #fff;
     --color-primary: #000;
-    --color-secondary: #039be5;
-    --color-tertiary: #fff;
+    --color-secondary: #fff;
+    --color-hover: #039be5;
 }
 
 /* Cross-browser CSS */
 html, body {
     padding : 0;
     margin : 0;
-    background : var(--background-primary);
-    color : var(--color-primary);
 }
 
 body > header {
@@ -23,7 +21,7 @@ body > header {
     padding: 0 !important;
     z-index: 3;
     transition: width 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-    background-color: var(--background-tertiary);
+    background-color: var(--background-card);
     overflow: hidden;
 }
 body > header > p {
@@ -33,7 +31,7 @@ body > header > p {
     width: 300px;
 }
 body > header > p:hover {
-    color: var(--color-secondary);
+    color: var(--color-hover);
 }
 body > header > p > i {
     transition: transform 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
@@ -44,7 +42,7 @@ body > header > p > i {
 body > header > nav {
     display: flex;
     flex-direction: column;
-    background-color: var(--background-tertiary) !important;
+    background-color: var(--background-card) !important;
     box-shadow: none;
     height: auto;
 }
@@ -73,7 +71,7 @@ body > header > nav > a.active,
 body > header > nav > a:hover,
 body > header > nav > button.active,
 body > header > nav > button:hover {
-    color: var(--color-secondary);
+    color: var(--color-hover);
 }
 body > header > nav > a > i,
 body > header > nav > button > i {
@@ -118,6 +116,9 @@ main {
     min-height: 100vh !important;
     right: 0 !important;
     z-index: 2;
+    overflow: hidden;
+    background : var(--background-primary);
+    color : var(--color-primary);
 }
 
 /* All articles */
@@ -150,11 +151,23 @@ main > article > header {
     display: flex;
     justify-content: center;
 }
+#apresentation > section:first-of-type > button {
+    background-color: var(--background-secondary);
+    color: var(--color-secondary);
+    z-index: 1;
+}
+#apresentation > section:first-of-type > button::before {
+    background-color: var(--color-hover);
+}
 #staapresentationrt > section > p {
     margin: 16px 0;
 }
 
 /* Second article - graduations */
+#graduation {
+    background-color: var(--background-secondary);
+    color: var(--color-secondary);
+}
 #graduation > ul {
     border: none;
 }
@@ -162,9 +175,10 @@ main > article > header {
     transition: color 0.25s linear;
     z-index: 0;
     margin: 15px;
+    color: var(--color-primary);
 }
 #graduation > ul > li:hover {
-    color: var(--color-secondary);
+    color: var(--color-hover);
     -webkit-box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
     box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
     z-index: 1;
@@ -176,11 +190,11 @@ main > article > header {
     transition: color 0.25s linear;
 }
 #stack > ul > li > section.collapsible-body {
-    background-color: var(--background-tertiary);
+    background-color: var(--background-card);
 }
 #stack > ul > li.active > header.collapsible-header,
 #stack > ul > li:hover > header.collapsible-header {
-    color: var(--color-secondary);
+    color: var(--color-hover);
 }
 #stack > ul > li:first-child .fa-plus {
     transform: rotate(135deg);
@@ -220,6 +234,10 @@ main > article > header {
 }
 
 /* Fourth article - experiences */
+#experience {
+    background-color: var(--background-secondary);
+    color: var(--color-secondary);
+}
 #experience > section > ul {
     border: none;
 }
@@ -228,7 +246,7 @@ main > article > header {
     background-color: transparent;
 }
 #experience > section > ul > li:hover {
-    color: var(--color-secondary);
+    color: var(--color-hover);
 }
 
 /* article - projects */
@@ -245,17 +263,25 @@ main > article > header {
     cursor: pointer;
     text-align: center;
     font-size: 16px;
-    background-color: var(--color-secondary);
+    background-color: var(--background-secondary);
+    color: var(--color-secondary);
+}
+#project > section figure:hover > .card-image > i {
+    color: var(--color-hover);
+}
+#project > section figure > figcaption {
+    background-color: var(--background-card);
+    color: var(--color-primary);
 }
 #project > section figure > figcaption > p > a {
-    color: var(--color-secondary);
+    color: var(--color-hover);
 }
 #project > section figure > figcaption > .card-action {
     position: absolute;
     bottom: 8px;
 }
 #project > section figure > figcaption > .card-action > a {
-    color: var(--color-secondary);
+    color: var(--color-hover);
 }
 
 /* Finish (footer) - contact */
@@ -271,6 +297,7 @@ footer {
     padding-left: 300px;
     transition: padding-left 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
     z-index: 1;
+    overflow: hidden;
 }
 footer > p.footer-copyright {
     text-align: center;
@@ -291,9 +318,10 @@ footer > ul > li {
 footer > ul > li > a {
     font-size: 16px;
     transition: color 0.25s linear;
+    color: var(--color-secondary);
 }
 footer > ul > li > a:hover {
-    color: var(--color-tertiary);
+    color: var(--color-hover);
 }
 footer > ul > li > a > i {
     text-align: center;
