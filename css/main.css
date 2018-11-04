@@ -1,17 +1,8 @@
-/* Colors */
-body {
-    --background-primary: #fafafa;
-    --background-secondary: #263238;
-    --background-card: #fff;
-    --color-primary: #000;
-    --color-secondary: #fff;
-    --color-hover: #039be5;
-}
-
 /* Cross-browser CSS */
 html, body {
     padding : 0;
     margin : 0;
+    font-size: 16px;
 }
 
 body > header {
@@ -21,19 +12,38 @@ body > header {
     padding: 0 !important;
     z-index: 3;
     transition: width 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-    background-color: var(--background-card);
+    background-color: #ffffff;
     overflow: hidden;
 }
-body > header > p {
-    transition: color 0.25s linear;
-    font-size: 2rem;
-    cursor: pointer;
+body > header > div {
     width: 300px;
 }
-body > header > p:hover {
-    color: var(--color-hover);
+body > header > div > img {
+    background-color: #c0c0c0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    margin: 0px auto 16px auto;
+    transition: width 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045), height 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045), transform 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
-body > header > p > i {
+body > header > div > p {
+    transition: color 0.25s linear;
+    width: 300px;
+}
+body > header > div > p:first-child {
+    font-size: 2rem;
+    cursor: pointer;
+}
+body > header > div > p:first-child:hover {
+    color: #039be5;
+}
+body > header > div > p:last-child {
+    font-size: 1.5rem;
+    padding-left: 25px;
+    transition: opacity 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+body > header > div > p > i {
     transition: transform 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
     text-align: center;
     width: 75px;
@@ -42,21 +52,21 @@ body > header > p > i {
 body > header > nav {
     display: flex;
     flex-direction: column;
-    background-color: var(--background-card) !important;
+    background-color: #ffffff !important;
     box-shadow: none;
     height: auto;
 }
-body > header > nav > a,
-body > header > nav > button {
+body > header > nav > a/*,
+body > header > nav > button*/ {
     transition: color 0.25s linear;
-    color: var(--color-primary);
+    color: #000000;
     width: 300px;
     line-height: 48px;
 }
 body > header > nav > a {
     opacity: 0;
 }
-body > header > nav > button {
+/*body > header > nav > button {
     background-color: transparent;
     border: none;
     padding: 0 !important;
@@ -66,20 +76,20 @@ body > header > nav > button {
 }
 body > header > nav > button:focus {
     background-color: unset;
-}
+}*/
 body > header > nav > a.active,
-body > header > nav > a:hover,
+body > header > nav > a:hover/*,
 body > header > nav > button.active,
-body > header > nav > button:hover {
-    color: var(--color-hover);
+body > header > nav > button:hover*/ {
+    color: #039be5;
 }
-body > header > nav > a > i,
-body > header > nav > button > i {
+body > header > nav > a > i/*,
+body > header > nav > button > i*/ {
     text-align: center;
     width: 75px;
     height: auto;
 }
-body > header > nav > ul#dropdownTheme > li {
+/*body > header > nav > ul#dropdownTheme > li {
     line-height: 50px;
     display: flex;
 }
@@ -87,7 +97,7 @@ body > header > nav > ul#dropdownTheme > li > i {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    margin: 11.5px 8px;
+    margin: 11.5px 25px;
     border: 1px solid black;
     transform: rotate(45deg);
 }
@@ -105,11 +115,11 @@ body > header > nav > ul#dropdownTheme > li:nth-child(4) > i {
 }
 body > header > nav > ul#dropdownTheme > li:nth-child(5) > i {
     background: linear-gradient(to left, #000 0%, #000 33%, #b71c1c 33%, #b71c1c 67%, #e53935 67%, #e53935 100%);
-}
+}*/
 
 /* Main page */
 main {
-    margin-bottom: 450px !important;
+    margin-bottom: 300px !important;
     position: absolute;
     transition: margin-left 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
     width: auto;
@@ -117,19 +127,20 @@ main {
     right: 0 !important;
     z-index: 2;
     overflow: hidden;
-    background : var(--background-primary);
-    color : var(--color-primary);
+    background : #fafafa;
+    color : #000000;
 }
 
 /* All articles */
 main > article {
     padding: 50px 5% 50px 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
 }
 main > article > header {
     margin: 50px auto;
+}
+main > article > header h1,
+main > article > header h3 {
+    font-size: 3rem;
 }
 
 /*  */
@@ -139,50 +150,47 @@ main > article > header {
 
 /* First article - apresentation */
 #apresentation > header > h1 {
-    font-size: auto;
-    width: 100%;
+    /* FONT-SIZE AUTO */
 }
-#apresentation > section:first-of-type {
+#apresentation > header > button {
     opacity: 0;
-    -o-animation-delay: 0.5s;
-    -moz-animation-delay: 0.5s;
-    -webkit-animation-delay: 0.5s;
-    animation-delay: 0.5s;
-    display: flex;
-    justify-content: center;
+    -o-animation-delay: 0.75s;
+    -moz-animation-delay: 0.75s;
+    -webkit-animation-delay: 0.75s;
+    animation-delay: 0.75s;
+    background-color: #039be5;
+    color: #000000;
+    margin-top: 16px;
 }
-#apresentation > section:first-of-type > button {
-    background-color: var(--background-secondary);
-    color: var(--color-secondary);
-    z-index: 1;
+#apresentation > header > button::before {
+    background-color: #039be5;
 }
-#apresentation > section:first-of-type > button::before {
-    background-color: var(--color-hover);
-}
-#staapresentationrt > section > p {
+#apresentation > section > p {
     margin: 16px 0;
 }
 
 /* Second article - graduations */
 #graduation {
-    background-color: var(--background-secondary);
-    color: var(--color-secondary);
+    background-color: #263238;
+    color: #ffffff;
 }
 #graduation > ul {
     border: none;
 }
 #graduation > ul > li {
     transition: color 0.25s linear;
-    z-index: 0;
+    /*z-index: 0;
     margin: 15px;
-    color: var(--color-primary);
+    color: #000000;*/
+    background-color: transparent;
+    color: #ffffff;
 }
-#graduation > ul > li:hover {
-    color: var(--color-hover);
+/*#graduation > ul > li:hover {
+    color: #039be5;
     -webkit-box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
     box-shadow: 0 8px 17px 2px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
     z-index: 1;
-}
+}*/
 
 /* Third article - stacks */
 #stack > ul > li > header.collapsible-header {
@@ -190,11 +198,11 @@ main > article > header {
     transition: color 0.25s linear;
 }
 #stack > ul > li > section.collapsible-body {
-    background-color: var(--background-card);
+    background-color: #ffffff;
 }
 #stack > ul > li.active > header.collapsible-header,
 #stack > ul > li:hover > header.collapsible-header {
-    color: var(--color-hover);
+    color: #039be5;
 }
 #stack > ul > li:first-child .fa-plus {
     transform: rotate(135deg);
@@ -235,8 +243,8 @@ main > article > header {
 
 /* Fourth article - experiences */
 #experience {
-    background-color: var(--background-secondary);
-    color: var(--color-secondary);
+    background-color: #263238;
+    color: #ffffff;
 }
 #experience > section > ul {
     border: none;
@@ -245,11 +253,11 @@ main > article > header {
     transition: color 0.25s linear;
     background-color: transparent;
 }
-#experience > section > ul > li:hover {
-    color: var(--color-hover);
-}
+/*#experience > section > ul > li:hover {
+    color: #039be5;
+}*/
 
-/* article - projects */
+/* Fifth article - projects */
 #project > section > div {
     padding: 16px 32px 16px;
 }
@@ -263,52 +271,114 @@ main > article > header {
     cursor: pointer;
     text-align: center;
     font-size: 16px;
-    background-color: var(--background-secondary);
-    color: var(--color-secondary);
+    background-color: #263238;
+    color: #ffffff;
 }
 #project > section figure:hover > .card-image > i {
-    color: var(--color-hover);
+    color: #039be5;
 }
 #project > section figure > figcaption {
-    background-color: var(--background-card);
-    color: var(--color-primary);
+    background-color: #ffffff;
+    color: #000000;
 }
 #project > section figure > figcaption > p > a {
-    color: var(--color-hover);
+    color: #039be5;
 }
 #project > section figure > figcaption > .card-action {
     position: absolute;
     bottom: 8px;
 }
 #project > section figure > figcaption > .card-action > a {
-    color: var(--color-hover);
+    color: #039be5;
+}
+
+/* Sixth article - contact */
+#contact {
+    background-color: #263238;
+}
+#contact > header > h3 {
+    color: #ffffff;
+}
+#contact > form {
+    margin-bottom: 24px;
+}
+#contact > form input.valid,
+#contact > form textarea.valid {
+    color: #4caf50;
+}
+#contact > form input.invalid,
+#contact > form textarea.invalid {
+    color: #f44336;
+}
+#contact > form input:not(.valid):not(.invalid),
+#contact > form textarea:not(.valid):not(.invalid),
+#contact > form input:focus,
+#contact > form textarea:focus,
+#contact > form input:focus + label,
+#contact > form textarea:focus + label {
+    color: #039be5 !important;
+}
+#contact > form input:focus,
+#contact > form textarea:focus {
+    border-bottom: 1px solid #039be5 !important;
+    -webkit-box-shadow: 0 1px 0 0 #039be5 !important;
+    box-shadow: 0 1px 0 0 #039be5 !important;
+}
+#contact > form .character-counter,
+#contact > form .helper-text,
+#contact > form .helper-text:after {
+    color: rgba(255,255,255,0.54) !important;
+}
+#contact > form input.invalid ~ .helper-text:after,
+#contact > form textarea.invalid ~ .helper-text:after {
+    color: rgba(255,255,255,0) !important;
+}
+#contact > form .character-counter {
+    position: absolute;
+    right: 11.250px;
+    bottom: 0;
+}
+#contact > form [type="submit"] {
+    display: block;
+    margin: auto;
+    background-color: #ffffff;
+    color: #039be5;
+}
+#contact > form [type="submit"]:hover,
+#contact > form [type="submit"]:focus {
+    display: block;
+    margin: auto;
+    background-color: #039be5;
+    color: #fff;
+}
+#contact > #modal {
+    max-width: calc(100% - 300px);
+    left: 300px;
+    transition: left 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
 /* Finish (footer) - contact */
 footer {
-    background-color: var(--background-secondary) !important;
+    background-color: #263238 !important;
     position: fixed;
     bottom: 0;
     width: 100%;
     height: auto;
     margin-bottom: 0 !important;
-    padding-bottom: 50px;
-    padding-top: 500px !important;
+    padding-bottom: 0px;
+    padding-top: 300px !important;
     padding-left: 300px;
     transition: padding-left 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
     z-index: 1;
     overflow: hidden;
 }
 footer > p.footer-copyright {
+    background-color: transparent !important;
     text-align: center;
     display: block !important;
-    margin-top: 16px;
 }
 footer > ul {
     border: none !important;
-}
-footer > ul:first-child {
-    padding-left: 15px;
 }
 footer > ul > li {
     background-color: transparent !important;
@@ -318,10 +388,10 @@ footer > ul > li {
 footer > ul > li > a {
     font-size: 16px;
     transition: color 0.25s linear;
-    color: var(--color-secondary);
+    color: #ffffff;
 }
 footer > ul > li > a:hover {
-    color: var(--color-hover);
+    color: #039be5;
 }
 footer > ul > li > a > i {
     text-align: center;
@@ -330,11 +400,18 @@ footer > ul > li > a > i {
 
 /* Responsive navigation */
 @media (max-width: 450px) {
+    body > header {
+        width: 300px !important;
+    }
     main {
         margin-left: 0px !important;
     }
     footer {
         padding-left: 0px !important;
+    }
+    #contact > #modal {
+        left: 0 !important;
+        max-width: 100%;
     }
 }
 @media (min-width: 451px) {
@@ -345,8 +422,13 @@ footer > ul > li > a > i {
         padding-left: 300px;
     }
 }
-@media (max-width: 450px) {
-    body > header {
-        width: 300px !important;
+
+/* Responsie footer */
+@media (max-width: 993px) {
+    main {
+        margin-bottom: 400px !important;
+    }
+    footer {
+        padding-top: 400px !important;
     }
 }

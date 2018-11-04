@@ -1,6 +1,6 @@
 <!-- Second article - graduations -->
 <article id="graduation" class="section scrollspy" animation-delay="0.75,0">
-    <header class="fadeInV">
+    <header class="center-align">
         <h3>Formações</h3>
     </header>
 
@@ -15,7 +15,7 @@
 
 <!-- Third article - stacks -->
 <article id="stack" class="section scrollspy">
-    <header>
+    <header class="center-align">
         <h3>Conhecimento</h3>
     </header>
 
@@ -61,7 +61,7 @@
 
             <section class="collapsible-body">
                 Uso do JavaScript nos navegadores para criar animações 2d e 3d com bibliotecas como jQuery, 
-                Velocity e ThreeJS, e desenvolvimento de aplicações de páginas única com frameworks como 
+                Velocity e ThreeJS, e desenvolvimento de aplicações de página única com frameworks como 
                 AngularJs e Angular. No backend para produção de APIs REST com alta escalabilidade com NodeJS
                 e Express
             </section>
@@ -136,7 +136,7 @@
 
 <!-- Fourth article - experiences -->
 <article id="experience" class="section scrollspy">
-    <header>
+    <header class="center-align">
         <h3>Experiências</h3>
     </header>
 
@@ -149,8 +149,8 @@
             <li class="collection-item">Suporte técnico</li>
             <li class="collection-item">Instalação e manutenção de equipamentos</li>
             <li class="collection-item">Instalação e manutenção de softwares tercerizados</li>
-            <li class="collection-item">Adiministração do sistema interno</li>
-            <li class="collection-item">Adiministração direta do banco de dados</li>
+            <li class="collection-item">Administração do sistema interno</li>
+            <li class="collection-item">Administração direta do banco de dados</li>
             <li class="collection-item">Criação e manutenção de sites para divulgação dos produtos da empresa</li>
             <li class="collection-item">Criação de novos módulos do sistema interno e atualização dos antigos</li>
         </ul>
@@ -159,7 +159,7 @@
 
 <!-- Fourth article - projects -->
 <article id="project" class="section scrollspy">
-    <header>
+    <header class="center-align">
         <h3>Projetos</h3>
     </header>
 
@@ -244,4 +244,48 @@
             </figcaption>
         </figure></div>
     </section>
+</article>
+
+<article id="contact" class="section scrollspy">
+    <header class="center-align">
+        <h3>Contato</h3>
+    </header>
+
+    <form class="row" action="#!" method="POST">
+        <div class="input-field col s12 m12 l12 xl12">
+            <input placeholder="Nome" id="name" type="text" class="validate" data-length="50" pattern="^[^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\],. ]{2,}[^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\],.]{0,48}$" required>
+            <!--label for="name">Nome</label-->
+            <span class="helper-text" data-error="De 2 à 50 caracteres">Mínimo de 2 caracteres</span>
+        </div>
+
+        <div class="input-field col s12 m12 l6 xl6">
+            <input placeholder="Telefone" id="phone" type="tel" pattern="^(\(\d{2}\)|\d{2})?[ \.\-]?9?\d{2}[ \.\-]?\d{2}[ \.\-]?\d{4}$" required>
+            <!--label for="phone">Telefone</label-->
+            <span class="helper-text" data-error="Email ou telefone obrigatório">Email ou telefone obrigatório</span>
+        </div>
+
+        <div class="input-field col s12 m12 l6 xl6">
+            <input placeholder="Email" id="email" type="email" pattern="^([0-9a-zA-Z]+([_.-]?[0-9a-zA-Z]+)*@[0-9a-zA-Z]+[0-9,a-z,A-Z,.,-]*(.){1}[a-zA-Z]{2,4})+$" required>
+            <!--label for="email">Email</label-->
+            <span class="helper-text" data-error="Email ou telefone obrigatório">Email ou telefone obrigatório</span>
+        </div>
+
+        <div class="input-field col s12 m12 l12 xl12">
+            <textarea placeholder="Mensagem" id="message" class="materialize-textarea validate" minlength="10" maxlength="100" data-length="100" required></textarea>
+            <!--label for="message">Mensagem</label-->
+            <span class="helper-text" data-error="Mínimo de 10 caracteres">Mínimo de 10 caracteres</span>
+        </div>
+
+        <button class="btn waves-effect waves-light" name="send" type="submit">Enviar Mensagem</button>
+    </form>
+
+    <article id="modal" class="modal">
+        <section class="modal-content">
+            <h4></h4>
+            <p></p>
+        </section>
+        <section class="modal-footer">
+            <button class="modal-close waves-effect btn-flat">Fechar</button>
+        </section>
+    </article>
 </article>
