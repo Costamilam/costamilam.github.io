@@ -205,7 +205,10 @@ let typed = new Typed('#apresentation h1', {
                     #experience > section > p,
                     #experience > section > ul > li,
                     #project > header,
-                    #project > section > div
+                    #project > section > div,
+                    #contact > header,
+                    #contact > form > div,
+                    #contact > form > button
                 `)) {
                     element.setAttribute('fade', 'inTop');
                     element.onElementIn(elementIn);
