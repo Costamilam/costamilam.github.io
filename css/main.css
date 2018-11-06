@@ -55,6 +55,7 @@ body > header > nav {
     background-color: #ffffff !important;
     box-shadow: none;
     height: auto;
+    transition: transform 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045)
 }
 body > header > nav > a/*,
 body > header > nav > button*/ {
@@ -62,9 +63,10 @@ body > header > nav > button*/ {
     color: #000000;
     width: 300px;
     line-height: 48px;
-}
-body > header > nav > a {
     opacity: 0;
+}
+body > header > nav > a:not(:first-child) {
+    display: none;
 }
 /*body > header > nav > button {
     background-color: transparent;

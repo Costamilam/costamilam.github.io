@@ -41,7 +41,7 @@ const hideAceleration = function() {
         acceleration.classList.remove('fadeInRight');
     }
 
-    document.querySelector('#apresentation > header > button').style.cursor = 'default';
+    acceleration.style.cursor = 'default';
 }
 
 //Acelerate typed
@@ -135,6 +135,9 @@ document.on('DOMContentLoaded', function() {
         const name = document.querySelector('body > header > div > p:last-child');
         name.style.opacity = name.style.opacity !== '0' ? '0' : '1'
 
+        const nav = document.querySelector('body > header > nav');
+        nav.style.transform = nav.style.transform !== 'translateY(-60px)' ? 'translateY(-60px)' : null;
+
         const menuIcon = document.querySelector('body > header > div > p > i');
         menuIcon.style.transform = menuIcon.style.transform !== 'rotate(180deg)' ? 'rotate(180deg)' : null;
 
@@ -177,12 +180,21 @@ let typed = new Typed('#apresentation h1', {
             done: function(response) {
                 document.querySelector('main').innerHTML += response.text;
 
+                /*document.querySelector('body > header > nav').innerHTML += `
+                    <a data-scroll href="#graduation" class="waves-effect"><i class="fas fa-graduation-cap"></i> <span>Formações</span></a>
+                    <a data-scroll href="#stack" class="waves-effect"><i class="fas fa-code"></i> <span>Conhecimentos</span></a>
+                    <a data-scroll href="#experience" class="waves-effect"><i class="fas fa-suitcase"></i> <span>Experiências</span></a>
+                    <a data-scroll href="#project" class="waves-effect"><i class="fas fa-code-branch"></i> <span>Projetos</span></a>
+                    <a data-scroll href="#contact" class="waves-effect"><i class="fas fa-paper-plane"></i> <span>Contato</span></a>
+                `;*/
+
                 animationDelay.execute();
 
                 setTimeout(() => animationDelay.remove(), 2000)
 
-                for (const element of document.querySelectorAll('nav > a:not(:first-of-type)')) {
+                for (const element of document.querySelectorAll('body > header > nav > a:not(:first-of-type)')) {
                     element.classList.add('fadeInRight');
+                    element.style.display = 'block';
                 }
 
                 //Smoth scroll effect (on anchor link click)
@@ -229,12 +241,14 @@ let typed = new Typed('#apresentation h1', {
                     inDuration: 400,
                     outDuration: 200,
                     onOpenStart: function(element) {
-                        element.querySelector('#stack .fa-plus').style.transition = 'transform 0.4s cubic-bezier(0.55, 0.055, 0.675, 0.19)';
-                        element.querySelector('#stack .fa-plus').style.transform = 'rotate(135deg)';
+                        const icon = element.querySelector('.fa-plus');
+                        icon.style.transition = 'transform 0.4s cubic-bezier(0.55, 0.055, 0.675, 0.19)';
+                        icon.style.transform = 'rotate(135deg)';
                     },
                     onCloseStart: function(element) {
-                        element.querySelector('#stack .fa-plus').style.transition = 'transform 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19)';
-                        element.querySelector('#stack .fa-plus').style.transform = 'rotate(0deg)';
+                        const icon = element.querySelector('.fa-plus');
+                        icon.style.transition = 'transform 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19)';
+                        icon.style.transform = 'rotate(0deg)';
                     }
                 });
 
@@ -290,7 +304,7 @@ let typed = new Typed('#apresentation h1', {
                 modal.instace = M.Modal.init(modal.element, {});
                 //modal.element.style.left = modal.element.style.left !== '75px' ? '75px' : '300px';
 
-                document.querySelector('#contact > form').addEventListener('submit', function(event) {
+                contactForm.addEventListener('submit', function(event) {
                     event.preventDefault();
 
                     contactForm.send.disabled = true;
