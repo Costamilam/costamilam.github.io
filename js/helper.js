@@ -41,6 +41,11 @@ const onEvent = function (element, event, callback) {
 HTMLElement.prototype.on = function (event, callback) {
     onEvent(this, event, callback);
 };
+NodeList.prototype.on = function (event, callback) {
+    for (const element of this) {
+        onEvent(element, event, callback);
+    }
+};
 Document.prototype.on = function (event, callback) {
     onEvent(this, event, callback);
 };

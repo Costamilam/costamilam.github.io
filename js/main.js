@@ -2,24 +2,37 @@
 const navigation = document.querySelector('body > header');
 
 //Device type, by width
-let isMobile = window.innerWidth <= 450 ? true : false;
+let isMobile = window.innerWidth <= 992 ? true : false;
 
 let sidenavInstance = null;
 
 //Change navigation element by width
 function navigationVerify() {
-    isMobile = window.innerWidth <= 450 ? true : false;
+    isMobile = window.innerWidth <= 992 ? true : false;
 
     if (isMobile) {
-        navigation.classList.add('sidenav');
-        navigation.classList.add('sidenav-fixed');
+        //navigation.classList.add('sidenav');
+        //navigation.classList.add('sidenav-fixed');
 
         if (sidenavInstance === null) {
-            sidenavInstance = M.Sidenav.init(navigation, {});
+            const menuIcon = document.querySelectorAll('body > div > i.fa-minus');
+        
+            sidenavInstance = M.Sidenav.init(navigation, {
+                onOpenStart: function() {
+                    menuIcon[2].style.transform = 'translateY(7px) rotateZ(45deg)';
+                    menuIcon[0].style.transform = 'translateY(7px) rotateZ(-45deg)';
+                    menuIcon[1].style.opacity = '0';
+                },
+                onCloseStart: function() {
+                    menuIcon[2].style.transform = null;
+                    menuIcon[0].style.transform =  null;
+                    menuIcon[1].style.opacity = null;
+                }
+            });
         }
     } else {
-        navigation.classList.remove('sidenav');
-        navigation.classList.remove('sidenav-fixed');
+        //navigation.classList.remove('sidenav');
+        //navigation.classList.remove('sidenav-fixed');
 
         if (sidenavInstance !== null) {
             sidenavInstance.destroy();
@@ -118,9 +131,15 @@ document.on('DOMContentLoaded', function() {
 
     //M.Dropdown.init(document.querySelector('.dropdown-trigger'), {});
 
-    document.querySelector('body > header > div > p').addEventListener('click', function() {
+    document.querySelectorAll('body > div:first-child, body > header > div > p').on('click', function() {
+        const modal = document.querySelector('#contact > #modal');
+        if (modal) {
+            modal.style.left = modal.style.left !== '75px' ? '75px' : null;
+            modal.style.maxWidth = modal.style.maxWidth !== 'calc(100% - 75px)' ? 'calc(100% - 75px)' : null;
+        }
+
         if (isMobile) {
-            sidenavInstance.close();
+            sidenavInstance.isOpen ? sidenavInstance.close() : sidenavInstance.open();
             return;
         }
 
@@ -138,20 +157,11 @@ document.on('DOMContentLoaded', function() {
         const nav = document.querySelector('body > header > nav');
         nav.style.transform = nav.style.transform !== 'translateY(-60px)' ? 'translateY(-60px)' : null;
 
-        const menuIcon = document.querySelector('body > header > div > p > i');
-        menuIcon.style.transform = menuIcon.style.transform !== 'rotate(180deg)' ? 'rotate(180deg)' : null;
-
         const main = document.querySelector('main');
         main.style.marginLeft = main.style.marginLeft !== '75px' ? '75px' : null;
 
         const footer = document.querySelector('footer');
         footer.style.paddingLeft = footer.style.paddingLeft !== '75px' ? '75px' : null;
-
-        const modal = document.querySelector('#contact > #modal');
-        if (modal) {
-            modal.style.left = modal.style.left !== '75px' ? '75px' : null;
-            modal.style.maxWidth = modal.style.maxWidth !== 'calc(100% - 75px)' ? 'calc(100% - 75px)' : null;
-        }
     });
 
     /*themeButton = document.querySelectorAll('#dropdownTheme > li');

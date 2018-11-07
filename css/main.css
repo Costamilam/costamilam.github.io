@@ -10,7 +10,6 @@ body > header {
     position: fixed;
     height: 100vh;
     padding: 0 !important;
-    z-index: 3;
     transition: width 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
     background-color: #ffffff;
     overflow: hidden;
@@ -43,19 +42,44 @@ body > header > div > p:last-child {
     padding-left: 25px;
     transition: opacity 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
-body > header > div > p > i {
+body > header > div > p > i, body > div > i {
     transition: transform 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
     text-align: center;
     width: 75px;
     height: auto;
 }
+body > div:first-child {
+    position: fixed;
+    z-index: 1000;
+    font-size: 2rem;
+    margin: 32px 0;
+    cursor: pointer;
+    transition: color 0.25s linear;
+}
+body > div:hover {
+    color: #039be5;
+}
+body > div:hover + header > div > p:first-child {
+    color: #039be5;
+}
+body > div > i.fa-minus {
+    display: none;
+}
+body > div > i.fa-minus:nth-child(1) {
+    /*transform: translateX(105%);*/
+}
+body > div > i.fa-minus:nth-child(2) {
+    transition: opacity 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    transform: translateY(7px);
+}
+body > div > i.fa-minus:nth-child(3) {
+    transform: translateY(14px);
+}
 body > header > nav {
-    display: flex;
-    flex-direction: column;
     background-color: #ffffff !important;
     box-shadow: none;
     height: auto;
-    transition: transform 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045)
+    transition: transform 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 body > header > nav > a/*,
 body > header > nav > button*/ {
@@ -131,6 +155,7 @@ main {
     overflow: hidden;
     background : #fafafa;
     color : #000000;
+    margin-left: 300px;
 }
 
 /* All articles */
@@ -401,7 +426,17 @@ footer > ul > li > a > i {
 }
 
 /* Responsive navigation */
-@media (max-width: 450px) {
+@media (max-width: 992px) {
+    body > header > div > p > i.fa-angle-left {
+        display: none;
+    }
+    body > div > i.fa-minus {
+        display: block;
+        position: fixed;
+    }
+    body > header > div > p > span {
+        margin-left: 75px;
+    }
     body > header {
         width: 300px !important;
     }
@@ -414,14 +449,6 @@ footer > ul > li > a > i {
     #contact > #modal {
         left: 0 !important;
         max-width: 100%;
-    }
-}
-@media (min-width: 451px) {
-    main {
-        margin-left: 300px;
-    }
-    footer {
-        padding-left: 300px;
     }
 }
 
