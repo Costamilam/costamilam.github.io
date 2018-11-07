@@ -5,7 +5,7 @@ html, body {
     font-size: 16px;
 }
 
-body > header {
+body > header.sidenav {
     width: 300px;
     position: fixed;
     height: 100vh;
@@ -13,6 +13,7 @@ body > header {
     transition: width 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
     background-color: #ffffff;
     overflow: hidden;
+    transform: none;
 }
 body > header > div {
     width: 300px;
@@ -55,11 +56,9 @@ body > div:first-child {
     margin: 32px 0;
     cursor: pointer;
     transition: color 0.25s linear;
-}
-body > div:hover {
     color: #039be5;
 }
-body > div:hover + header > div > p:first-child {
+body > div:first-child:hover + header > div > p:first-child {
     color: #039be5;
 }
 body > div > i.fa-minus {
@@ -430,15 +429,16 @@ footer > ul > li > a > i {
     body > header > div > p > i.fa-angle-left {
         display: none;
     }
-    body > div > i.fa-minus {
+    body > div:first-child > i.fa-minus {
         display: block;
         position: fixed;
     }
     body > header > div > p > span {
         margin-left: 75px;
     }
-    body > header {
+    body > header.sidenav {
         width: 300px !important;
+        transform: translateX(-105%);
     }
     main {
         margin-left: 0px !important;

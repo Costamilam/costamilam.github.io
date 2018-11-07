@@ -157,6 +157,9 @@ document.on('DOMContentLoaded', function() {
         const nav = document.querySelector('body > header > nav');
         nav.style.transform = nav.style.transform !== 'translateY(-60px)' ? 'translateY(-60px)' : null;
 
+        const menuIcon = document.querySelector('body > header > div > p > i');
+        menuIcon.style.transform = menuIcon.style.transform !== 'rotateZ(180deg)' ? 'rotateZ(180deg)' : null;
+
         const main = document.querySelector('main');
         main.style.marginLeft = main.style.marginLeft !== '75px' ? '75px' : null;
 
