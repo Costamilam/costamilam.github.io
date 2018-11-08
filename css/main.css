@@ -379,15 +379,15 @@ main > article > header h3 {
 #contact > form [type="submit"] {
     display: block;
     margin: auto;
-    background-color: #ffffff;
-    color: #039be5;
+    background-color: #039be5;
+    color: #ffffff;
 }
 #contact > form [type="submit"]:hover,
 #contact > form [type="submit"]:focus {
     display: block;
     margin: auto;
-    background-color: #039be5;
-    color: #fff;
+    background-color: #ffffff;
+    color: #039be5;
 }
 #contact > #modal {
     max-width: calc(100% - 300px);
