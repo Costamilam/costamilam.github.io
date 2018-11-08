@@ -184,12 +184,23 @@ main > article > header h3 {
     -moz-animation-delay: 0.75s;
     -webkit-animation-delay: 0.75s;
     animation-delay: 0.75s;
-    background-color: #039be5;
-    color: #000000;
     margin-top: 16px;
+    background-color: #039be5;
 }
 #apresentation > header > button::before {
     background-color: #039be5;
+}
+#apresentation > header > button:hover {
+    background-color: #263238;
+}
+#apresentation > header > button:hover::before {
+    background-color: #263238;
+}
+#apresentation > header > button > i {
+    color: #263238;
+}
+#apresentation > header > button:hover > i {
+    color: #039be5;
 }
 #apresentation > section > p {
     margin: 16px 0;
@@ -297,11 +308,12 @@ main > article > header h3 {
     cursor: pointer;
     text-align: center;
     font-size: 16px;
-    background-color: #263238;
-    color: #ffffff;
+    color: #263238;
+    background-color: #039be5;
 }
 #project > section figure:hover > .card-image > i {
     color: #039be5;
+    background-color: #263238;
 }
 #project > section figure > figcaption {
     background-color: #ffffff;
