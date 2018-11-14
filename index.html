@@ -64,6 +64,20 @@
     <!-- Import helper functions -->
     <script defer type="text/javascript" src="./js/helper.js"></script>
 
+    <!-- Import the Firebase and configure it -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-database.js"></script>
+    <script>
+        firebase.initializeApp({
+            apiKey: "AIzaSyBdIwRV9GYHWfxCoPKMmSzamSmRP3EpJLg",
+            authDomain: "perfil-costamilam.firebaseapp.com",
+            databaseURL: "https://perfil-costamilam.firebaseio.com",
+            projectId: "perfil-costamilam",
+            storageBucket: "perfil-costamilam.appspot.com",
+            messagingSenderId: "399477884691"
+        });
+    </script>
+
     <!-- Import Custum JS -->
     <script defer type="text/javascript" src="./js/main.js"></script>
 </head>
@@ -145,18 +159,5 @@
         </ul>
         <p class="footer-copyright col s12 m12 l12 xl12">Guilherme Costamilam © 2018. Todos os direitos reservados</p>
     </footer>
-
-    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-database.js"></script>
-    <script>
-        firebase.initializeApp({
-            apiKey: "AIzaSyBdIwRV9GYHWfxCoPKMmSzamSmRP3EpJLg",
-            authDomain: "perfil-costamilam.firebaseapp.com",
-            databaseURL: "https://perfil-costamilam.firebaseio.com",
-            projectId: "perfil-costamilam",
-            storageBucket: "perfil-costamilam.appspot.com",
-            messagingSenderId: "399477884691"
-        });
-    </script>
 </body>
 </html>
