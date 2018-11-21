@@ -1,5 +1,5 @@
 Print config:
 
- - Width: 1680;
- - Height: 1702;
- - Zoom: 40%.
+ - Width 1680px;
+ - Height 1702px;
+ - Zoom 40%.
