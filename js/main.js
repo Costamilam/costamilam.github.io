@@ -66,19 +66,19 @@ const accelerate = function() {
 acceleration.on('click', accelerate);
 
 //Initialize on element in/out events
-const onElement = new OnElement(35);
+const onElement = new OnElement(50);
 onElement.usePrototype();
 
 //Callbacks to events in/out
 const elementIn = function(element) {
-    if (element.getBoundingClientRect().y <= 35) {
+    if (element.getBoundingClientRect().y <= 50) {
         element.setAttribute('fade', 'inBottom');
     } else {
         element.setAttribute('fade', 'inTop');
     }
 };
 const elementOut = function(element) {
-    if (element.getBoundingClientRect().y <= 35) {
+    if (element.getBoundingClientRect().y <= 50) {
         element.setAttribute('fade', 'outBottom');
     } else {
         element.setAttribute('fade', 'outTop');
