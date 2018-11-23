@@ -1,8 +1,20 @@
 /* Normalize CSS */
-html, body {
+body {
     padding : 0;
     margin : 0;
     font-size: 16px;
+}
+
+@font-face {
+    font-family: 'Flotta';
+    src: url('../webfonts/FLOTTA.eot');
+    src: url('../webfonts/FLOTTA.woff2') format('woff2'),
+         url('../webfonts/FLOTTA.woff') format('woff'),
+         url('../webfonts/FLOTTA.ttf') format('truetype'),
+         url('../webfonts/FLOTTA.svg#FLOTTA') format('svg'),
+         url('../webfonts/FLOTTA.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 /* Custum scroll */
@@ -162,7 +174,7 @@ body > header > nav > ul#dropdownTheme > li:nth-child(5) > i {
 
 /* Main page */
 main {
-    margin-bottom: 300px !important;
+    margin-bottom: 450px !important;
     position: absolute;
     transition: margin-left 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
     width: auto;
@@ -422,11 +434,14 @@ footer {
     height: auto;
     margin-bottom: 0 !important;
     padding-bottom: 0px;
-    padding-top: 300px !important;
+    padding-top: 450px !important;
     padding-left: 300px;
     transition: padding-left 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
     z-index: 1;
     overflow: hidden;
+}
+footer > object {
+    height: 150px;
 }
 footer > p.footer-copyright {
     background-color: transparent !important;
@@ -485,9 +500,9 @@ footer > ul > li > a > i {
 /* Responsie footer */
 @media (max-width: 993px) {
     main {
-        margin-bottom: 400px !important;
+        margin-bottom: 550px !important;
     }
     footer {
-        padding-top: 400px !important;
+        padding-top: 550px !important;
     }
 }
