@@ -1,3 +1,9 @@
+animationDelay.execute();
+setTimeout(() => {
+    animationDelay.remove();
+    document.querySelector('body > header > div > img').classList.remove('fadeInRight')
+}, 2500);
+
 //Navigation element
 const navigation = document.querySelector('body > header');
 
@@ -158,9 +164,9 @@ document.on('DOMContentLoaded', function() {
                         <a data-scroll href="#contact" class="waves-effect"><i class="fas fa-paper-plane"></i> <span>Contato</span></a>
                     `;*/
 
+                    document.querySelector('body > header > nav').setAttribute('animation-delay', '0,0.25');
                     animationDelay.execute();
-
-                    setTimeout(() => animationDelay.remove(), 2000)
+                    setTimeout(() => animationDelay.remove(), 2500);
 
                     for (const element of document.querySelectorAll('body > header > nav > a:not(:first-of-type)')) {
                         element.classList.add('fadeInRight');
