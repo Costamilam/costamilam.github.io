@@ -1,17 +1,20 @@
+[fade] {
+    -o-animation-duration: 0.75s;
+    -o-animation-fill-mode: both;
+    -moz-animation-duration: 0.75s;
+    -moz-animation-fill-mode: both;
+    -webkit-animation-duration: 0.75s;
+    -webkit-animation-fill-mode: both;
+    animation-duration: 0.75s;
+    animation-fill-mode: both;
+}
+
 /* Fade in animation */
 [fade="inTop"] {
     -o-animation-name: fadeInTop;
-    -o-animation-duration: 0.75s;
-    -o-animation-fill-mode: both;
     -moz-animation-name: fadeInTop;
-    -moz-animation-duration: 0.75s;
-    -moz-animation-fill-mode: both;
     -webkit-animation-name: fadeInTop;
-    -webkit-animation-duration: 0.75s;
-    -webkit-animation-fill-mode: both;
     animation-name: fadeInTop;
-    animation-duration: 0.75s;
-    animation-fill-mode: both;
 }
 @-o-keyframes fadeInTop {
     0% {
@@ -89,17 +92,9 @@
 /* Fade in animation */
 [fade="inBottom"] {
     -o-animation-name: fadeInBottom;
-    -o-animation-duration: 0.75s;
-    -o-animation-fill-mode: both;
     -moz-animation-name: fadeInBottom;
-    -moz-animation-duration: 0.75s;
-    -moz-animation-fill-mode: both;
     -webkit-animation-name: fadeInBottom;
-    -webkit-animation-duration: 0.75s;
-    -webkit-animation-fill-mode: both;
     animation-name: fadeInBottom;
-    animation-duration: 0.75s;
-    animation-fill-mode: both;
 }
 @-o-keyframes fadeInBottom {
     0% {
@@ -175,21 +170,13 @@
 }
 
 /* Fade out animation */
-[fade="outTop"] {
-    -o-animation-name: fadeOutTop;
-    -o-animation-duration: 0.75s;
-    -o-animation-fill-mode: both;
-    -moz-animation-name: fadeOutTop;
-    -moz-animation-duration: 0.75s;
-    -moz-animation-fill-mode: both;
-    -webkit-animation-name: fadeOutTop;
-    -webkit-animation-duration: 0.75s;
-    -webkit-animation-fill-mode: both;
-    animation-name: fadeOutTop;
-    animation-duration: 0.75s;
-    animation-fill-mode: both;
+[fade="outBottom"] {
+    -o-animation-name: fadeOutBottom;
+    -moz-animation-name: fadeOutBottom;
+    -webkit-animation-name: fadeOutBottom;
+    animation-name: fadeOutBottom;
 }
-@-o-keyframes fadeOutTop {
+@-o-keyframes fadeOutBottom {
     0% {
         opacity: 1;
         -o-transform: none;
@@ -207,7 +194,7 @@
         transform: translateY(50px);
     }
 }
-@-moz-keyframes fadeOutTop {
+@-moz-keyframes fadeOutBottom {
     0% {
         opacity: 1;
         -o-transform: none;
@@ -225,7 +212,7 @@
         transform: translateY(50px);
     }
 }
-@-webkit-keyframes fadeOutTop {
+@-webkit-keyframes fadeOutBottom {
     0% {
         opacity: 1;
         -o-transform: none;
@@ -243,7 +230,7 @@
         transform: translateY(50px);
     }
 }
-@keyframes fadeOutTop {
+@keyframes fadeOutBottom {
     0% {
         opacity: 1;
         -o-transform: none;
@@ -263,21 +250,13 @@
 }
 
 /* Fade out animation */
-[fade="outBottom"] {
-    -o-animation-name: fadeOutBottom;
-    -o-animation-duration: 0.75s;
-    -o-animation-fill-mode: both;
-    -moz-animation-name: fadeOutBottom;
-    -moz-animation-duration: 0.75s;
-    -moz-animation-fill-mode: both;
-    -webkit-animation-name: fadeOutBottom;
-    -webkit-animation-duration: 0.75s;
-    -webkit-animation-fill-mode: both;
-    animation-name: fadeOutBottom;
-    animation-duration: 0.75s;
-    animation-fill-mode: both;
+[fade="outTop"] {
+    -o-animation-name: fadeOutTop;
+    -moz-animation-name: fadeOutTop;
+    -webkit-animation-name: fadeOutTop;
+    animation-name: fadeOutTop;
 }
-@-o-keyframes fadeOutBottom {
+@-o-keyframes fadeOutTop {
     0% {
         opacity: 1;
         -o-transform: none;
@@ -295,7 +274,7 @@
         transform: translateY(-50px);
     }
 }
-@-moz-keyframes fadeOutBottom {
+@-moz-keyframes fadeOutTop {
     0% {
         opacity: 1;
         -o-transform: none;
@@ -313,7 +292,7 @@
         transform: translateY(-50px);
     }
 }
-@-webkit-keyframes fadeOutBottom {
+@-webkit-keyframes fadeOutTop {
     0% {
         opacity: 1;
         -o-transform: none;
@@ -331,7 +310,7 @@
         transform: translateY(-50px);
     }
 }
-@keyframes fadeOutBottom {
+@keyframes fadeOutTop {
     0% {
         opacity: 1;
         -o-transform: none;
@@ -351,19 +330,11 @@
 }
 
 /* Fade in horizontal animation */
-.fadeInRight {
+[fade="inRight"] {
     -o-animation-name: fadeInRight;
-    -o-animation-duration: 0.75s;
-    -o-animation-fill-mode: both;
     -moz-animation-name: fadeInRight;
-    -moz-animation-duration: 0.75s;
-    -moz-animation-fill-mode: both;
     -webkit-animation-name: fadeInRight;
-    -webkit-animation-duration: 0.75s;
-    -webkit-animation-fill-mode: both;
     animation-name: fadeInRight;
-    animation-duration: 0.75s;
-    animation-fill-mode: both;
 }
 @-o-keyframes fadeInRight {
     0% {
@@ -439,19 +410,11 @@
 }
 
 /* Fade out horizontal animation */
-.fadeOutRight {
+[fade="outRight"] {
     -o-animation-name: fadeOutRight;
-    -o-animation-duration: 0.75s;
-    -o-animation-fill-mode: both;
     -moz-animation-name: fadeOutRight;
-    -moz-animation-duration: 0.75s;
-    -moz-animation-fill-mode: both;
     -webkit-animation-name: fadeOutRight;
-    -webkit-animation-duration: 0.75s;
-    -webkit-animation-fill-mode: both;
     animation-name: fadeOutRight;
-    animation-duration: 0.75s;
-    animation-fill-mode: both;
 }
 @-o-keyframes fadeOutRight {
     0% {

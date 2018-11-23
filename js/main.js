@@ -1,7 +1,7 @@
 animationDelay.execute();
 setTimeout(() => {
     animationDelay.remove();
-    document.querySelector('body > header > div > img').classList.remove('fadeInRight')
+    document.querySelector('body > header > div > img').removeAttribute('fade')
 }, 2500);
 
 //Navigation element
@@ -53,12 +53,11 @@ document.on('DOMContentLoaded', function() {
     //Fade out aceleration button
     const acceleration = document.querySelector('#apresentation > header > button');
     const hideAceleration = function() {
-        if (!acceleration.classList.contains('fadeOutRight')) {
+        if (acceleration.getAttribute('fade') !== 'outRight') {
             acceleration.style.animationDelay = '0s';
-            acceleration.classList.add('fadeOutRight');
+            acceleration.setAttribute('fade', 'outRight');
         } else {
-            acceleration.classList.remove('fadeOutRight');
-            acceleration.classList.remove('fadeInRight');
+            acceleration.removeAttribute('fade');
         }
     
         acceleration.style.cursor = 'default';
@@ -86,9 +85,9 @@ document.on('DOMContentLoaded', function() {
     };
     const elementOut = function(element) {
         if (element.getBoundingClientRect().y <= 50) {
-            element.setAttribute('fade', 'outBottom');
-        } else {
             element.setAttribute('fade', 'outTop');
+        } else {
+            element.setAttribute('fade', 'outBottom');
         }
     };
     
@@ -169,7 +168,7 @@ document.on('DOMContentLoaded', function() {
                     setTimeout(() => animationDelay.remove(), 2500);
 
                     for (const element of document.querySelectorAll('body > header > nav > a:not(:first-of-type)')) {
-                        element.classList.add('fadeInRight');
+                        element.setAttribute('fade', 'inRight');
                         element.style.display = 'block';
                     }
 
@@ -319,6 +318,15 @@ document.on('DOMContentLoaded', function() {
                 }
             });
         }
+    });
+
+    firebase.initializeApp({
+        apiKey: "AIzaSyBdIwRV9GYHWfxCoPKMmSzamSmRP3EpJLg",
+        authDomain: "perfil-costamilam.firebaseapp.com",
+        databaseURL: "https://perfil-costamilam.firebaseio.com",
+        projectId: "perfil-costamilam",
+        storageBucket: "perfil-costamilam.appspot.com",
+        messagingSenderId: "399477884691"
     });
 });
 

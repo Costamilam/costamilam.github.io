@@ -80,6 +80,7 @@ body > header > div > p > i, body > div > i {
     height: auto;
 }
 body > div:first-child {
+    display: none;
     position: fixed;
     z-index: 1000;
     font-size: 2rem;
@@ -91,17 +92,14 @@ body > div:first-child {
 body > div:first-child:hover + header > div > p:first-child {
     color: #039be5;
 }
-body > div > i.fa-minus {
-    display: none;
+body > div:first-child > i.fa-minus {
+    position: fixed;
 }
-body > div > i.fa-minus:nth-child(1) {
-    /*transform: translateX(105%);*/
-}
-body > div > i.fa-minus:nth-child(2) {
+body > div:first-child > i.fa-minus:nth-child(2) {
     transition: opacity 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
     transform: translateY(7px);
 }
-body > div > i.fa-minus:nth-child(3) {
+body > div:first-child > i.fa-minus:nth-child(3) {
     transform: translateY(14px);
 }
 body > header > nav {
@@ -474,9 +472,8 @@ footer > ul > li > a > i {
     body > header > div > p > i.fa-angle-left {
         display: none;
     }
-    body > div:first-child > i.fa-minus {
+    body > div:first-child {
         display: block;
-        position: fixed;
     }
     body > header > div > p > span {
         margin-left: 75px;
