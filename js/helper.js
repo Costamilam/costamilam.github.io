@@ -23,28 +23,52 @@ const animationDelay = {
 
 //Event listener
 const onEvent = function (element, event, callback) {
-    if (event.toLocaleLowerCase().startsWith('on')) {
-        event = event.toLocaleLowerCase().replace('on', '');
+    if (Array.isArray(event)) {
+        let response = [];
+        for (const e of event) {
+            response.push(onEvent(element, e, callback));
+        }
+        return response;
     }
 
-    if (element.addEventListener) {
-        return element.addEventListener(event, callback);
-    } else if(element.attachEvent) {
-        return element.attachEvent(event, callback);
-    } else if (element['on'+event]) {
-        element['on'+event] = callback;
-        return element['on'+event];
+    function addListener(element, event, callback) {
+        if (element.addEventListener) {
+            return element.addEventListener(event, callback);
+        } else if(element.attachEvent) {
+            return element.attachEvent(event, callback);
+        } else if (element['on'+event]) {
+            element['on'+event] = callback;
+            return element['on'+event];
+        } else {
+            return false;
+        }
+    }
+
+    if (
+        element instanceof HTMLElement ||
+        element instanceof Document ||
+        element instanceof Window
+    ) {
+        return addListener(element, event, callback);
+    } else if (element instanceof NodeList) {
+        const response = [];
+        for (const el of element) {
+            response.push(addListener(el, event, callback));
+        }
+        return response;
     } else {
-        return false;
+        const response = [];
+        for (const el of document.querySelectorAll(element)) {
+            response.push(addListener(el, event, callback));
+        }
+        return response;
     }
 }
 HTMLElement.prototype.on = function (event, callback) {
     onEvent(this, event, callback);
 };
 NodeList.prototype.on = function (event, callback) {
-    for (const element of this) {
-        onEvent(element, event, callback);
-    }
+    onEvent(this, event, callback);
 };
 Document.prototype.on = function (event, callback) {
     onEvent(this, event, callback);
