@@ -1,6 +1,17 @@
 {
     "name": "Costamilam",
     "short_name": "Costamilam",
+    "dir": "ltr",
+    "lang": "pt-br",
+    "description": "Minha página web de perfil - Guilherme Costamilam, desenvolvedor full stack",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "prefer_related_applications": false,
+    "related_applications": [],
     "icons": [
         {
             "src": "/android-chrome-36x36.png",
@@ -47,10 +58,5 @@
             "sizes": "512x512",
             "type": "image/png"
         }
-    ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
-    "start_url": "https://costamilam.github.io",
-    "display": "standalone",
-    "orientation": "portrait"
+    ]
 }
