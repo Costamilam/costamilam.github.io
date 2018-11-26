@@ -21,18 +21,18 @@ function navigationVerify() {
         //navigation.classList.add('sidenav-fixed');
 
         if (sidenavInstance === null) {
-            const menuIcon = document.querySelectorAll('body > div > i.fa-minus');
+            const menuIcon = document.querySelectorAll('body > div:first-child > i.fa-minus');
         
             sidenavInstance = M.Sidenav.init(navigation, {
                 onOpenStart: function() {
-                    menuIcon[2].style.transform = 'translateY(7px) rotateZ(45deg)';
                     menuIcon[0].style.transform = 'translateY(7px) rotateZ(-45deg)';
-                    menuIcon[1].style.opacity = '0';
+                    menuIcon[1].style.transform = 'scaleX(0)';
+                    menuIcon[2].style.transform = 'translateY(-7px) rotateZ(45deg)';
                 },
                 onCloseStart: function() {
-                    menuIcon[2].style.transform = null;
                     menuIcon[0].style.transform =  null;
-                    menuIcon[1].style.opacity = null;
+                    menuIcon[1].style.transform = null;
+                    menuIcon[2].style.transform = null;
                 }
             });
         }
@@ -155,20 +155,12 @@ document.on('DOMContentLoaded', function() {
                 done: function(response) {
                     document.querySelector('main').innerHTML += response.text;
 
-                    /*document.querySelector('body > header > nav').innerHTML += `
-                        <a data-scroll href="#graduation" class="waves-effect"><i class="fas fa-graduation-cap"></i> <span>Formações</span></a>
-                        <a data-scroll href="#stack" class="waves-effect"><i class="fas fa-code"></i> <span>Conhecimentos</span></a>
-                        <a data-scroll href="#experience" class="waves-effect"><i class="fas fa-suitcase"></i> <span>Experiências</span></a>
-                        <a data-scroll href="#project" class="waves-effect"><i class="fas fa-code-branch"></i> <span>Projetos</span></a>
-                        <a data-scroll href="#contact" class="waves-effect"><i class="fas fa-paper-plane"></i> <span>Contato</span></a>
-                    `;*/
-
                     document.querySelector('body > header > nav').setAttribute('animation-delay', '0,0.25');
                     animationDelay.execute();
                     setTimeout(() => animationDelay.remove(), 2500);
 
                     for (const element of document.querySelectorAll('body > header > nav > a:not(:first-of-type)')) {
-                        element.setAttribute('fade', 'inRight');
+                        element.setAttribute('fade', 'inLeft');
                         element.style.display = 'block';
                     }
 

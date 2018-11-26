@@ -1,8 +1,9 @@
 const animationDelay = {
     attribute: 'animation-delay',
-    execute: function() {
-        for (const element of document.querySelectorAll(`[${this.attribute}]`)) {
-            const times = element.getAttribute(this.attribute).split(',');
+    separator: ';',
+    execute: function(baseElement = document) {
+        for (const element of baseElement.querySelectorAll(`[${this.attribute}]`)) {
+            const times = element.getAttribute(this.attribute).split(this.separator);
             times[0] -= times[1];
 
             for (const child of element.children) {
@@ -12,8 +13,8 @@ const animationDelay = {
             }
         }
     },
-    remove: function() {
-        for (const element of document.querySelectorAll(`[${this.attribute}]`)) {
+    remove: function(baseElement = document) {
+        for (const element of baseElement.querySelectorAll(`[${this.attribute}]`)) {
             for (const child of element.children) {
                 child.style.animationDelay = null;
             }
