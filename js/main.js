@@ -155,7 +155,7 @@ document.on('DOMContentLoaded', function() {
                 done: function(response) {
                     document.querySelector('main').innerHTML += response.text;
 
-                    document.querySelector('body > header > nav').setAttribute('animation-delay', '0,0.25');
+                    document.querySelector('body > header > nav').setAttribute('animation-delay', '0;0.25');
                     animationDelay.execute();
                     setTimeout(() => animationDelay.remove(), 2500);
 
