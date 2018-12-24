@@ -42,14 +42,14 @@
     <!--link type="text/css" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/regular.css" integrity="sha384-ZlNfXjxAqKFWCwMwQFGhmMh3i89dWDnaFU2/VZg9CvsMGA7hXHQsPIqS+JIAmgEq" crossorigin="anonymous"-->
     <link type="text/css" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/brands.css" integrity="sha384-rf1bqOAj3+pw6NqYrtaE1/4Se2NBwkIfeYbsFdtiR6TQz0acWiwJbv1IM/Nt/ite" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
-    <!--link type="text/css" rel="stylesheet" href="./css/fontAwesome.css">
-    <!link type="text/css" rel="stylesheet" href="./css/fontAwesomeBrand.css">
-    <!link type="text/css" rel="stylesheet" href="./css/fontAwesomeRegular.css">
-    <!link type="text/css" rel="stylesheet" href="./css/fontAwesomeSolid.css"-->
+    <!-- <link type="text/css" rel="stylesheet" href="./css/fontAwesome.css">
+    <link type="text/css" rel="stylesheet" href="./css/fontAwesomeBrand.css">
+    <link type="text/css" rel="stylesheet" href="./css/fontAwesomeRegular.css">
+    <link type="text/css" rel="stylesheet" href="./css/fontAwesomeSolid.css"> -->
 
     <!-- Import materialize.css -->
 	<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" media="screen,projection"/>
-	<!--link type="text/css" rel="stylesheet" href="./css/materialize.min.css" media="screen,projection"/-->
+	<!-- <link type="text/css" rel="stylesheet" href="./css/materialize.min.css" media="screen,projection"/> -->
 
     <!-- Import custum CSS -->
     <link type="text/css" rel="stylesheet" href="./css/main.css" media="screen,projection"/>
@@ -59,15 +59,15 @@
 
     <!-- Import materialize.js -->
     <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!--script defer type="text/javascript" src="./js/materialize.min.js"></script-->
+    <!-- <script defer type="text/javascript" src="./js/materialize.min.js"></script> -->
 
     <!-- Import typed.js -->
     <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9/lib/typed.min.js"></script>
-    <!--script defer type="text/javascript" src="./js/typed.js"></script-->
+    <!-- <script defer type="text/javascript" src="./js/typed.js"></script> -->
 
     <!-- Import Link Smooth Scroll -->
     <script defer type="text/javascript" src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14.2/dist/smooth-scroll.polyfills.min.js"></script>
-    <!--script defer type="text/javascript" src="./js/smoothScroll.js"></script-->
+    <!-- <script defer type="text/javascript" src="./js/smoothScroll.js"></script> -->
 
     <!-- Import Smooth Scroll. Based in https://codepen.io/acauamontiel/pen/zxxebb?editors=0010 -->
     <!--script defer type="text/javascript" src="./js/scrolling.js"></script-->
@@ -79,6 +79,8 @@
     <script defer type="text/javascript" src="./js/helper.js"></script>
 
     <!-- Import Firebase Realtime Database -->
+    <!-- <script defer type="text/javascript" src="./js/firebase-app.js"></script> -->
+    <!-- <script defer type="text/javascript" src="./js/firebase-database.js"></script> -->
     <script defer type="text/javascript" src="https://www.gstatic.com/firebasejs/5.5.7/firebase-app.js"></script>
     <script defer type="text/javascript" src="https://www.gstatic.com/firebasejs/5.5.7/firebase-database.js"></script>
 
@@ -107,12 +109,34 @@
 
         <!-- Navigation menu -->
         <nav animation-delay="1;0.25">
-            <a data-scroll href="#apresentation" class="waves-effect" fade="inLeft"><i class="fas fa-user"></i> <span>Sobre mim</span></a>
-            <a data-scroll href="#graduation" class="waves-effect"><i class="fas fa-graduation-cap"></i> <span>Formações</span></a>
-            <a data-scroll href="#stack" class="waves-effect"><i class="fas fa-code"></i> <span>Conhecimentos</span></a>
-            <a data-scroll href="#experience" class="waves-effect"><i class="fas fa-suitcase"></i> <span>Experiências</span></a>
-            <a data-scroll href="#project" class="waves-effect"><i class="fas fa-code-branch"></i> <span>Projetos</span></a>
-            <a data-scroll href="#contact" class="waves-effect"><i class="fas fa-paper-plane"></i> <span>Contato</span></a>
+            <a data-scroll href="#apresentation" class="waves-effect" fade="inLeft">
+                <i class="fas fa-user"></i>
+                <span>Sobre mim</span>
+            </a>
+            <a data-scroll href="#graduation" class="waves-effect">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Formações</span>
+            </a>
+            <a data-scroll href="#stack" class="waves-effect">
+                <i class="fas fa-code"></i>
+                <span>Conhecimentos</span>
+            </a>
+            <a data-scroll href="#experience" class="waves-effect">
+                <i class="fas fa-suitcase"></i>
+                <span>Experiências</span>
+            </a>
+            <a data-scroll href="#project" class="waves-effect">
+                <i class="fas fa-code-branch"></i>
+                <span>Projetos</span>
+            </a>
+            <a data-scroll href="#contact" class="waves-effect">
+                <i class="fas fa-paper-plane"></i>
+                <span>Contato</span>
+            </a>
+            <a href="https://costamilam.github.io/costamilam.github.io/media/costamilam.pdf" target="_blank" class="waves-effect">
+                <i class="fas fa-file-pdf"></i>
+                <span>Currículo</span>
+            </a>
             <!--button class="waves-effect dropdown-trigger" data-target="dropdownTheme"><i class="fas fa-palette"></i> <span>Tema</span></button-->
         </nav>
         <!-- Theme submenu -->
@@ -137,13 +161,16 @@
 
             <section animation-delay="0;0.25">
                 <p>
-                    Comecei na carreira de desenvolvimento através de um curso técnico em informática, onde conheci os conceitos de rede e conectividades, análise e desenvolvimento de softwares orientado a objetos, as linguagens HTML, CSS, JavaScript, PHP, Java e SQL, uso de programas para criação e edição de artes vetoriais e imagens, também fui introduzido ao sistema operacional Linux e servidores Windows.
+                    Comecei na carreira de desenvolvimento através de um curso técnico em informática, onde aprendi conceitos hardware, software e design. Me aperfeiçoei (e continuo me aperfeiçoando) na parte de desenvovimento de softwares e design, principalmente web.
                 </p>
                 <p>
-                    Após o término do curso, foquei no desenvolvimento mobile, criando alguns aplicativos usando APIs do Google como Firebase, Maps e Directions. No mesmo ano, também troquei o Windows pelo Linux Mint e hoje uso a distribuição Ubuntu.
+                    Hoje estou aprendendo sobre o React, uma das principais bibliotecas JavaScript para criação de frontend para a web. Já no backend estou desenvolvendo um framework PHP para criação de APIs REST, futuramente pretendo ampliar meus conhecimentos em Python, tanto para criação de banckend web como inteligência artificial.
                 </p>
                 <p>
-                    No primeiro semestre desse ano participei do Students to Busines na trilha de desenvolvimento web com NodeJS (tendo ganho a menção honrosa como melhor aluno) onde também conheci o framework AngularJS e aprimorei meus conhecimentos em APIs REST, requisições e respostas HTTP.
+                    Além de tecnologias e linguagens, sempre estou estudando os conceitos por traz delas. Acredito que o código deve ser o mais simples possível e que só deve adicionar complexidade e/ou dependências quando essas oferecem uma real vantagem. Gosto de desenvolver baseado em protótipos, criando versões básicas funcionais e implementando mais funcionalidades e segurança conforme for aprovado.
+                </p>
+                <p>
+                    Minhas principais habilidades são proatividade, autodidatismo e comunicação, tenho ideias para diversos projetos, que vou executando no meu tempo livre. Programação não é só uma profissão, mas um lazer.
                 </p>
             </section>
         </article>
