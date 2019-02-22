@@ -63,66 +63,82 @@
 @-o-keyframes fadeIn {
     0% {
         visibility: hidden;
+        opacity: 0;
     }
     100% {
         visibility: visible;
+        opacity: 1;
     }
 }
 @-moz-keyframes fadeIn {
     0% {
         visibility: hidden;
+        opacity: 0;
     }
     100% {
         visibility: visible;
+        opacity: 1;
     }
 }
 @-webkit-keyframes fadeIn {
     0% {
         visibility: hidden;
+        opacity: 0;
     }
     100% {
         visibility: visible;
+        opacity: 1;
     }
 }
 @keyframes fadeIn {
     0% {
         visibility: hidden;
+        opacity: 0;
     }
     100% {
         visibility: visible;
+        opacity: 1;
     }
 }
 
 @-o-keyframes fadeOut {
     0% {
         visibility: visible;
+        opacity: 1;
     }
     100% {
         visibility: hidden;
+        opacity: 0;
     }
 }
 @keyframes fadeOut {
     0% {
         visibility: visible;
+        opacity: 1;
     }
     100% {
         visibility: hidden;
+        opacity: 0;
     }
 }
 @keyframes fadeOut {
     0% {
         visibility: visible;
+        opacity: 1;
     }
     100% {
         visibility: hidden;
+        opacity: 0;
     }
 }
 @keyframes fadeOut {
     0% {
         visibility: visible;
+        opacity: 1;
     }
     100% {
         visibility: hidden;
+        opacity: 0;
     }
 }
 
