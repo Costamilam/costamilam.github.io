@@ -289,7 +289,7 @@ main > article > header h3 {
     color: #039be5;
 }
 #apresentation > section > p {
-    visibility: hidden;
+    opacity: 0;
     margin: 16px 0;
 }
 

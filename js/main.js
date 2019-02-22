@@ -52,7 +52,7 @@ window.on(['resize', 'ondeviceorientation'], navigationVerify);
 document.on('DOMContentLoaded', function() {
     //Fade out aceleration button
     const acceleration = document.querySelector('#apresentation > header > button');
-    const hideAceleration = function() {
+    function hideAceleration() {
         if (acceleration.getAttribute('fade') !== 'outRight') {
             acceleration.style.animationDelay = '0s';
             acceleration.setAttribute('fade', 'outRight');
@@ -64,7 +64,7 @@ document.on('DOMContentLoaded', function() {
     }
     
     //Acelerate typed
-    const accelerate = function() {
+    function accelerate() {
         typed.typeSpeed = 3;
         typed.backSpeed = 1;
         hideAceleration();
@@ -72,25 +72,33 @@ document.on('DOMContentLoaded', function() {
     acceleration.on('click', accelerate);
     
     //Initialize on element in/out events
-    const onElement = new OnElement(50);
-    onElement.usePrototype();
-    
-    //Callbacks to events in/out
-    const elementIn = function(element) {
-        if (element.getBoundingClientRect().y <= 50) {
-            element.setAttribute('fade', 'inBottom');
-        } else {
-            element.setAttribute('fade', 'inTop');
-        }
-    };
-    const elementOut = function(element) {
-        if (element.getBoundingClientRect().y <= 50) {
-            element.setAttribute('fade', 'outTop');
-        } else {
-            element.setAttribute('fade', 'outBottom');
-        }
-    };
-    
+    // const ioView = new IOView(
+    //     '100px 0px',
+    //     entrie => {
+    //         entrie.target.setAttribute('fade', entrie.boundingClientRect.top > window.innerHeight/2 ? 'inBottom' : 'inTop');
+    //     },
+    //     entrie => {
+    //         entrie.target.setAttribute('fade', entrie.boundingClientRect.top > window.innerHeight/2 ? 'outBottom' : 'outTop');
+    //     }
+    // );
+    // const ioView = new IntersectionObserver(function(entries) {
+    //     entries.forEach(function (entrie) {
+    //         if (entrie.intersectionRatio >= 0.5) {
+    //             entrie.target.style.opacity = 1;
+    //             entrie.target.style.transform = 'translateY(0px)';
+    //         } else {
+    //             entrie.target.style.opacity = 0;
+    //             entrie.target.style.transform = `translateY(${
+    //                 entrie.boundingClientRect.top > window.innerHeight/2 ? '' : '-'
+    //             }10vh)`;
+    //         }
+    //     });
+    // }, {
+    //     root: null,
+    //     rootMargin: '10% 0px',
+    //     threshold: 0.5
+    // });
+
     //Scrollspy menu
     let scrollspy;
     scrollspy = M.ScrollSpy.init(document.querySelectorAll('.scrollspy'), {})
@@ -139,8 +147,10 @@ document.on('DOMContentLoaded', function() {
         }
     });
 
+    // ioView.observe(document.querySelector('#apresentation > header'));
+
     //Typed start article title
-    let typed = new Typed('#apresentation h1', {
+    let typed = new Typed('#apresentation > header > h1', {
         strings: ['^500Oi,^500 eu aiu',  'Oi,^250 eu sou o Guilherme^250!'],
         showCursor: false,
         contentType: 'null',
@@ -169,32 +179,30 @@ document.on('DOMContentLoaded', function() {
                     //Smoth scroll effect (on scroll)
                     //smooth('main', '0.75s');
 
-                    const titleName = document.querySelector('#apresentation > header');
-                    titleName.onElementIn(elementIn);
-                    titleName.onElementOut(elementOut);
+                    // for (const element of document.querySelectorAll(`
+                    //     #apresentation > section > p,
+                    //     #graduation > header,
+                    //     #graduation > ul > li,
+                    //     #stack > header,
+                    //     #stack > ul > li,
+                    //     #experience > header,
+                    //     #experience > section > h4,
+                    //     #experience > section > p,
+                    //     #experience > section > ul > li,
+                    //     #project > header,
+                    //     #project > section > div,
+                    //     #contact > header,
+                    //     #contact > form > div,
+                    //     #contact > form > button
+                    // `)) {
+                    //     ioView.observe(element);
+                    // }
 
                     for (const element of document.querySelectorAll(`
-                        #apresentation > section > p,
-                        #graduation > header,
-                        #graduation > ul > li,
-                        #stack > header,
-                        #stack > ul > li,
-                        #experience > header,
-                        #experience > section > h4,
-                        #experience > section > p,
-                        #experience > section > ul > li,
-                        #project > header,
-                        #project > section > div,
-                        #contact > header,
-                        #contact > form > div,
-                        #contact > form > button
+                        #apresentation > section > p
                     `)) {
                         element.setAttribute('fade', 'inTop');
-                        element.onElementIn(elementIn);
-                        element.onElementOut(elementOut);
                     }
-
-                    onElement.execute();
 
                     //Reinitialize scrollspy
                     scrollspy[0].destroy();
