@@ -9,7 +9,6 @@ let tapInstance = M.TapTarget.init(document.querySelector('.tap-target'), {
         buttonAddToHomeScreen.classList.remove('pulse');
     }
 });
-tapInstance.open();
 
 let deferredPrompt;
 
@@ -19,10 +18,14 @@ window.on('beforeinstallprompt', function(event) {
     deferredPrompt = event;
 
     buttonAddToHomeScreen.style.display = 'block';
+    buttonAddToHomeScreen.style.opacity = '1';
+
+    tapInstance.open();
 });
 
 buttonAddToHomeScreen.on('click', function() {
-    //buttonAddToHomeScreen.style.display = 'none';
+    buttonAddToHomeScreen.style.display = 'none';
+    buttonAddToHomeScreen.style.opacity = '0';
 
     deferredPrompt.prompt();
 

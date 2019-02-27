@@ -29,6 +29,12 @@ header::-webkit-scrollbar-track {
     height: 56px;
     line-height: 56px;
     z-index: 1001;
+    opacity: 0;
+    display: none;
+    -o-transition: opacity 0.5s ease;
+    -moz-transition: opacity 0.5s ease;
+    -webkit-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
 }
 #addToHomeScreen > i {
     color: #269be5;
