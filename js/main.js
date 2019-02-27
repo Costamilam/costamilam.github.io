@@ -1,5 +1,5 @@
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/js/service-worker.js');
+    navigator.serviceWorker.register('/service-worker.js');
 }
 
 const buttonAddToHomeScreen = document.querySelector('#addToHomeScreen');
@@ -14,8 +14,6 @@ tapInstance.open();
 let deferredPrompt;
 
 window.on('beforeinstallprompt', function(event) {
-    console.log(event)
-
     event.preventDefault();
 
     deferredPrompt = event;
