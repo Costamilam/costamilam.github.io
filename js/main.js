@@ -24,12 +24,12 @@ window.on('beforeinstallprompt', function(event) {
 });
 
 buttonAddToHomeScreen.on('click', function() {
-    buttonAddToHomeScreen.style.display = 'none';
-    buttonAddToHomeScreen.style.opacity = '0';
-
     deferredPrompt.prompt();
 
     deferredPrompt.userChoice.then(function() {
+        buttonAddToHomeScreen.style.display = 'none';
+        buttonAddToHomeScreen.style.opacity = '0';
+    
         deferredPrompt = null;
     });
 });
