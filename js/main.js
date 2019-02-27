@@ -2,6 +2,41 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/js/service-worker.js');
 }
 
+const buttonAddToHomeScreen = document.querySelector('#addToHomeScreen');
+
+let tapInstance = M.TapTarget.init(document.querySelector('.tap-target'), {
+    onClose: function() {
+        buttonAddToHomeScreen.classList.remove('pulse');
+    }
+});
+tapInstance.open();
+
+let deferredPrompt;
+
+window.on('beforeinstallprompt', function(event) {
+    console.log(event)
+
+    event.preventDefault();
+
+    deferredPrompt = event;
+
+    buttonAddToHomeScreen.style.display = 'block';
+});
+
+buttonAddToHomeScreen.on('click', function() {
+    //buttonAddToHomeScreen.style.display = 'none';
+
+    deferredPrompt.prompt();
+
+    deferredPrompt.userChoice.then(function() {
+        deferredPrompt = null;
+    });
+});
+
+onEvent('.tap-target-content > i', 'click', function() {
+    setTimeout(() => tapInstance.close(), 0);
+});
+
 animationDelay.execute();
 setTimeout(() => {
     animationDelay.remove();
