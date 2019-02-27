@@ -52,6 +52,8 @@ self.addEventListener('install', e => {
                 '/safari-pinned-tab.svg',
                 '/js/main.js',
                 '/js/helper.js',
+                '/js/firebase-app.js',
+                '/js/firebase-database.js',
                 '/css/main.css',
                 '/css/animation.css',
                 '/media/costamilam.png',
@@ -69,9 +71,7 @@ self.addEventListener('install', e => {
                 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css',
                 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js',
                 'https://cdn.jsdelivr.net/npm/typed.js@2.0.9/lib/typed.min.js',
-                'https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14.2/dist/smooth-scroll.polyfills.min.js',
-                'https://www.gstatic.com/firebasejs/5.5.7/firebase-app.js',
-                'https://www.gstatic.com/firebasejs/5.5.7/firebase-database.js'
+                'https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14.2/dist/smooth-scroll.polyfills.min.js'
             ])
                 .then(() => self.skipWaiting());
         })
