@@ -259,7 +259,7 @@ body > header > nav > ul#dropdownTheme > li:nth-child(5) > i {
 /* Main page */
 main {
     margin-bottom: 450px !important;
-    position: absolute;
+    position: relative;
     -o-transition: margin-left 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
     -moz-transition: margin-left 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
     -webkit-transition: margin-left 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
