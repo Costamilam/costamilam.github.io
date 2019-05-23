@@ -3,9 +3,9 @@ importScripts('https://cdn.jsdelivr.net/npm/serviceworker-cache-polyfill@4.0.0/i
 const version = '1.0.0';
 const cacheName = `costamilam-v${version}`;
 
-self.addEventListener('install', e => {
-    e.waitUntil(
-        caches.open(cacheName).then(cache => {
+self.addEventListener('install', function(event) {
+    event.waitUntil(
+        caches.open(cacheName).then(function(cache) {
             return cache.addAll([
                 '/android-chrome-144x144.png',
                 '/android-chrome-192x192.png',
@@ -72,22 +72,23 @@ self.addEventListener('install', e => {
                 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js',
                 'https://cdn.jsdelivr.net/npm/typed.js@2.0.9/lib/typed.min.js',
                 'https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14.2/dist/smooth-scroll.polyfills.min.js'
-            ])
-                .then(() => self.skipWaiting());
+            ]).then(function() {
+                self.skipWaiting()
+            });
         })
     );
 });
 
-self.addEventListener('activate', event => {
+self.addEventListener('activate', function(event) {
     event.waitUntil(self.clients.claim());
 });
 
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', function(event) {
     event.respondWith(
-        caches.open(cacheName)
-            .then(cache => cache.match(event.request, { ignoreSearch: true }))
-            .then(response => {
-                return response || fetch(event.request);
-            })
+        caches.open(cacheName).then(function(cache) {
+            return cache.match(event.request, { ignoreSearch: true });
+        }).then(function(response) {
+            return response || fetch(event.request);
+        })
     );
 });
