@@ -2,7 +2,7 @@ const http = require('http');
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 
-const { serverKey, reciverKey } = require('./keys');
+const { serverKey, receiverKey } = require('./keys');
 
 admin.initializeApp();
 
@@ -11,7 +11,7 @@ module.exports.setPostDate = functions.database.ref('/messages/{id}').onCreate((
 
     data.date = new Date().toISOString();
 
-    snapshot.ref.set(data).then(() => {
+    return snapshot.ref.set(data).then(() => {
         http.request({
             host: 'fcm.googleapis.com',
             path: '/fcm/send',
@@ -22,7 +22,7 @@ module.exports.setPostDate = functions.database.ref('/messages/{id}').onCreate((
             }
         }).end(JSON.stringify({
             data: data,
-            to: reciverKey
+            to: receiverKey
         }));
     }).catch(error => {
         console.error('Failed to add date when creating message: ', error)
