@@ -72,6 +72,8 @@ messaging.requestPermission()
 messaging.onMessage(function(payload) {
     list.push(payload.data);
 
+    localStorage['list'] = JSON.stringify(list);
+
     updateDOM();
 });
 

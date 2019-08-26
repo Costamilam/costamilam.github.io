@@ -8,10 +8,6 @@ firebase.initializeApp({
 const messaging = firebase.messaging();
 
 messaging.setBackgroundMessageHandler(function(payload) {
-    localStorage['list'] = JSON.stringify(
-        JSON.parse(localStorage['list']).concat(payload.data)
-    );
-
     return self.registration.showNotification('Mensagem de Cliente', {
         body: payload.data.message,
         icon: '/icons/icon.png',
