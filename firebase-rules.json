@@ -1,7 +1,11 @@
 {
     "rules": {
-        ".read": false,
+        "receiver": {
+            ".write": false,
+            ".read": false
+        },
         "messages": {
+            ".read": false,
             "$key": {
                 ".write": "!data.exists()",
                 ".validate": "(newData.hasChildren(['name', 'phone', 'email', 'message']) || newData.hasChildren(['name', 'phone', 'message']) || newData.hasChildren(['name', 'email', 'message'])) && (newData.child('email').val().matches(/^([0-9a-zA-Z]+([_.-]?[0-9a-zA-Z]+)*@[0-9a-zA-Z]+[0-9,a-z,A-Z,.,-]*(.){1}[a-zA-Z]{2,4})+$/) || newData.child('phone').val().matches(/^(\\([0-9]{2}\\)|[0-9]{2})?[ \\.\\-]?9?[0-9]{2}[ \\.\\-]?[0-9]{2}[ \\.\\-]?[0-9]{4}$/))",
@@ -23,6 +27,7 @@
             }
         },
         "errors": {
+            ".read": false,
             "$key": {
                 ".write": "!data.exists()",
                 ".validate": "newData.hasChildren(['error', 'values'])",
