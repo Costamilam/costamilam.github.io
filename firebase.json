@@ -1,10 +1,20 @@
 {
-    "hosting": {
-        "public": "/",
+    "hosting": [{
+        "target": "perfil",
+        "public": "./",
+        "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**",
+            "admin/**"
+        ]
+    }, {
+        "target": "admin",
+        "public": "./admin/public/",
         "ignore": [
             "firebase.json",
             "**/.*",
             "**/node_modules/**"
         ]
-    }
+    }]
 }
