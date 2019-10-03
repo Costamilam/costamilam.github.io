@@ -7,7 +7,7 @@ admin.initializeApp();
 
 admin.database().ref('/receiver').on('value', snapshot => receiver = snapshot.val());
 
-module.exports.setPostDate = functions.database.ref('/messages/{id}').onCreate((snapshot, context) => {
+module.exports.onCreateMessage = functions.database.ref('/messages/{id}').onCreate((snapshot, context) => {
     const data = snapshot.val();
 
     data.date = new Date().toISOString();
