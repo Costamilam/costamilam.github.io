@@ -13,11 +13,19 @@ module.exports.onCreateMessage = functions.database.ref('/messages/{id}').onCrea
     data.date = new Date().toISOString();
 
     return snapshot.ref.set(data).then(() => {
-        admin.messaging().send({
-            data: data,
-            token: receiver
-        });
+        notify(data);
     }).catch(error => {
         console.error('Failed to add date when creating message: ', error)
     });
 });
+
+const notify = function(data) {
+    if (receiver) {
+        admin.messaging().send({
+            data: data,
+            token: receiver
+        });
+    } else {
+        setTimeout(() => notify(data), 500);
+    }
+}
