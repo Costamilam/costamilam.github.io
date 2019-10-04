@@ -13,19 +13,25 @@ module.exports.onCreateMessage = functions.database.ref('/messages/{id}').onCrea
     data.date = new Date().toISOString();
 
     return snapshot.ref.set(data).then(() => {
-        notify(data);
+        notify('New client message', data);
     }).catch(error => {
+        notify('Failed to add date when creating message', { error, data });
+
         console.error('Failed to add date when creating message: ', error)
     });
 });
 
-const notify = function(data) {
+module.exports.onError = functions.database.ref('/errors/{id}').onCreate((snapshot, context) => {
+    notify('Error on create message', snapshot.val());
+});
+
+const notify = function(title, data) {
     if (receiver) {
         admin.messaging().send({
-            data: data,
+            data: { title, data: JSON.stringify(data) },
             token: receiver
         });
     } else {
-        setTimeout(() => notify(data), 500);
+        setTimeout(() => notify(title, data), 500);
     }
 }

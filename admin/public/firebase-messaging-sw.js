@@ -8,8 +8,8 @@ firebase.initializeApp({
 const messaging = firebase.messaging();
 
 messaging.setBackgroundMessageHandler(function(payload) {
-    return self.registration.showNotification('Mensagem de Cliente', {
-        body: payload.data.message,
+    return self.registration.showNotification(payload.data.title, {
+        body: payload.data.data,
         icon: '/icons/icon.png',
         data: {
             url: '/'

@@ -31,7 +31,7 @@
             }
         },
         "errors": {
-            ".read": false,
+            ".read": "auth !== null && auth.uid === root.child('admin').val()",
             "$key": {
                 ".write": "!data.exists()",
                 ".validate": "newData.hasChildren(['error', 'values'])",
