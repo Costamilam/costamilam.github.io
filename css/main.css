@@ -351,6 +351,10 @@ main > article > header h3 {
     z-index: 1;
 }*/
 #graduation > ul > li > a {
+    -o-transition: color 0.25s linear;
+    -moz-transition: color 0.25s linear;
+    -webkit-transition: color 0.25s linear;
+    transition: color 0.25s linear;
     color: #ffffff;
 }
 #graduation > ul > li > a:hover {
