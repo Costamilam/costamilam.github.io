@@ -399,9 +399,11 @@ main > article > header h3 {
     -webkit-transform: translateX(-15px) rotate(15deg);
     transform: translateX(-15px) rotate(15deg);
 }
+#stack li:nth-child(5) i,
 #stack li:last-child i {
     display: block;
 }
+#stack li:nth-child(5) i > img,
 #stack li:last-child i > img {
     position: absolute;
     -o-transition: opacity 0.25s linear;
@@ -409,17 +411,23 @@ main > article > header h3 {
     -webkit-transition: opacity 0.25s linear;
     transition: opacity 0.25s linear;
 }
+#stack li:nth-child(5) i > img:last-child,
 #stack li:last-child i > img:last-child {
     opacity: 0;
 }
+#stack li:nth-child(5):hover i > img:first-child,
+#stack li.active:nth-child(5) i > img:first-child,
 #stack li:last-child:hover i > img:first-child,
 #stack li.active:last-child i > img:first-child {
     opacity: 0;
 }
+#stack li:nth-child(5):hover i > img:last-child,
+#stack li.active:nth-child(5) i > img:last-child,
 #stack li:last-child:hover i > img:last-child,
 #stack li.active:last-child i > img:last-child {
     opacity: 1;
 }
+#stack li:nth-child(5) span > span,
 #stack li:last-child span > span {
     margin-left: 60px;
 }
