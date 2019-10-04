@@ -466,6 +466,7 @@ main > article > header h3 {
     color: #039be5;
 }
 #project > section figure > figcaption > p > a[disabled] {
+    pointer-events: none;
     cursor: default;
     text-decoration: line-through #039be5;
 }
