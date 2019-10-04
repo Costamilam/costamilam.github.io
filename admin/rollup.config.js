@@ -13,7 +13,7 @@ export default {
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		file: 'public/bundle.js'
+		file: 'public/js/bundle.js'
 	},
 	plugins: [
 		svelte({
@@ -22,12 +22,12 @@ export default {
 			// we'll extract any component CSS out into
 			// a separate file — better for performance
 			css: css => {
-				css.write('public/bundle.css');
+				css.write('public/css/bundle.css');
 			}
 		}),
 
 		// css loader
-		css({ output: './public/main.css' }),
+		css({ output: './public/css/main.css' }),
 
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
