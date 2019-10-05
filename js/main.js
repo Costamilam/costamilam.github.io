@@ -90,17 +90,31 @@ navigationVerify()
 window.on(['resize', 'ondeviceorientation'], navigationVerify);
 
 document.on('DOMContentLoaded', function() {
+    let tooltip = M.Tooltip.init(document.querySelectorAll('.tooltipped'), {});
+
     //Fade out aceleration button
     const acceleration = document.querySelector('#apresentation > header > button');
     function hideAceleration() {
         if (acceleration.getAttribute('fade') !== 'outRight') {
             acceleration.style.animationDelay = '0s';
+
             acceleration.setAttribute('fade', 'outRight');
         } else {
             acceleration.removeAttribute('fade');
         }
     
         acceleration.style.cursor = 'default';
+
+        if (tooltip && tooltip[0]) {
+            tooltip[0].destroy();
+
+            tooltip = null;
+
+            for (const element of document.querySelectorAll('.material-tooltip')) {
+                // element.remove();
+                element.outerHTML = '';
+            }
+        }
     }
     
     //Acelerate typed
@@ -249,7 +263,7 @@ document.on('DOMContentLoaded', function() {
                     M.ScrollSpy.init(document.querySelectorAll('.scrollspy'), {});
 
                     //Initialize tooltipe
-                    M.Tooltip.init(document.querySelectorAll('.tooltipped'), {});
+                    M.Tooltip.init(document.querySelectorAll('article:not(#apresentation) .tooltipped'), {});
                 
                     //Initialize collapsible
                     M.Collapsible.init(document.querySelectorAll('.collapsible'), {
