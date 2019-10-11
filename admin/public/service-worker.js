@@ -6,11 +6,11 @@ self.addEventListener('install', function(event) {
         caches.open(cacheName).then(function(cache) {
             return cache.addAll([
                 'service-worker.js',
-                '/bundle.js',
-                '/bundle.js.map',
-                '/bundle.css',
-                '/bundle.css.map',
-                '/main.css',
+                '/js/bundle.js',
+                '/js/bundle.js.map',
+                '/css/bundle.css',
+                '/css/bundle.css.map',
+                '/css/main.css',
                 '/index.html',
                 '/favicon.ico'
             ]).then(function() {
