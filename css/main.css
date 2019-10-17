@@ -16,10 +16,10 @@ header::-webkit-scrollbar-track {
     background-color: #ffffff;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: #273238;
+    background-color: #263238;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #269be5;
+    background-color: #039be5;
 }
 
 /* Add to home screen button  */
@@ -37,10 +37,10 @@ header::-webkit-scrollbar-track {
     transition: opacity 0.5s ease;
 }
 #addToHomeScreen > i {
-    color: #269be5;
+    color: #039be5;
 }
 .tap-target {
-    background-color: #269be5;
+    background-color: #039be5;
 }
 .tap-target-wave {
     display: none;
