@@ -495,6 +495,24 @@ main > article > header h3 {
 #project > section figure > figcaption > .card-action > a {
     color: #039be5;
 }
+#project > section > div > a {
+    display: block;
+    width: max-content;
+    margin: 0 auto;
+}
+#project > section > div > a > button {
+    display: block;
+    margin: auto;
+    background-color: #039be5;
+    color: #263238;
+}
+#project > section > div > a > button:hover,
+#project > section > div > a > button:focus {
+    display: block;
+    margin: auto;
+    background-color: #263238;
+    color: #039be5;
+}
 
 /* Sixth article - contact */
 #contact {
